@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-01-21T11:15:11.994Z</updated>
+  <updated>2022-01-22T07:58:12.677Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C#中调用Java的类与方法</title>
+    <link href="http://example.com/2022/01/22/c-java/"/>
+    <id>http://example.com/2022/01/22/c-java/</id>
+    <published>2022-01-22T07:50:05.000Z</published>
+    <updated>2022-01-22T07:58:12.677Z</updated>
+    
+    <content type="html"><![CDATA[<p>C#中调用Java的类与方法</p><ul><li><p>核心：ikvm生成jar的dll文件，在c#中进行引用。</p></li><li><p>易踩坑：java1.7 对应ikvm7；java1.8 对应ikvm8</p></li><li><p>步骤：</p><ol><li>在Idea中，添加非默认文件夹下的包，如图中com。</li></ol><p><img src="/image/C_sharp_Java/1.png" alt="步骤1"></p><ol start="2"><li><p>编写类文件 ChatClient和ChatServer。<br><img src="/image/C_sharp_Java/2.png" alt="步骤2"></p></li><li><p>使用idea对工程进行build，建立jar包。</p></li><li><p>在jar包的目录下cmd输入：ikvmc -out:hello.dll Chat.jar。</p></li><li><p>将生成的dll文件和IKVM的几个文件添加到引用。<br><img src="/image/C_sharp_Java/5.png" alt="步骤5"></p></li><li><p>在C#中引用包，using com;</p></li><li><p>在类中即可调用。<br><img src="/image/C_sharp_Java/7.png" alt="步骤7"></p></li></ol></li></ul>]]></content>
+    
+    
+    <summary type="html">在本篇文章中，我们使用ikvm工具来实现C#中可以调用Java的类与方法。</summary>
+    
+    
+    
+    <category term="Other tools" scheme="http://example.com/categories/Other-tools/"/>
+    
+    
+    <category term="Tools" scheme="http://example.com/tags/Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>LIS&amp;&amp;LCS以及相互转化问题</title>
