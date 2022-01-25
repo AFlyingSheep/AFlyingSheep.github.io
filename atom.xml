@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-01-22T07:58:12.677Z</updated>
+  <updated>2022-01-25T16:58:07.700Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>元神日记</title>
+    <link href="http://example.com/2022/01/26/Yuanshen/"/>
+    <id>http://example.com/2022/01/26/Yuanshen/</id>
+    <published>2022-01-26T03:10:02.000Z</published>
+    <updated>2022-01-25T16:58:07.700Z</updated>
+    
+    <content type="html"><![CDATA[        <h2 id="2022-1-24"   >          <a href="#2022-1-24" class="heading-link"><i class="fas fa-link"></i></a><a href="#2022-1-24" class="headerlink" title="2022-1-24"></a>2022-1-24</h2>      <p>​    今天是来到提瓦特世界的第一天，蒙德城做了许多任务。这里的人又友善又有趣！不过我需要原石抽抽抽，这个人邀请我加入了冒险者协会，还给了我好多原石！就用和她的合影记录稀里糊涂的第一天吧！</p><p><img src="/image/yuanshen/1.png" alt="冒险者协会"></p>        <h2 id="2022-1-25"   >          <a href="#2022-1-25" class="heading-link"><i class="fas fa-link"></i></a><a href="#2022-1-25" class="headerlink" title="2022-1-25"></a>2022-1-25</h2>      <ul><li>第一次登上望峰角看日出，真的好美！在登上去的一瞬间我真的震撼了！</li></ul><p><img src="/image/yuanshen/2.png" alt="后面的就是望峰角"></p><p><img src="/image/yuanshen/3.png" alt="望峰角日出"></p><ul><li><p>最近没有任务可以做了，就去探图了！</p></li><li><p>第一次来到璃月，被中式建筑文化圈粉了！后面就是璃月！</p></li></ul><p><img src="/image/yuanshen/4.png" alt="璃月"></p><ul><li>顺便光顾了老板娘的生意。中原杂碎，好吃不贵！</li></ul><p><img src="/image/yuanshen/5.png" alt="火锅"></p><ul><li>华禄池，听说取自白居易的一首诗，可惜进不去，以后再来吧！</li></ul><p><img src="/image/yuanshen/6.png" alt="华禄池"></p><ul><li>顺便附上随手拍！</li></ul><p><img src="/image/yuanshen/7.png" alt="华禄池"></p>        <h2 id="2022-1-26"   >          <a href="#2022-1-26" class="heading-link"><i class="fas fa-link"></i></a><a href="#2022-1-26" class="headerlink" title="2022-1-26"></a>2022-1-26</h2>      <ul><li>和我的兄弟们征服雪山啦！</li><li>虽然我的操作和解密笨比，不过最终在兄弟们的带领下征服了雪山！</li><li>第一次站上钉子山，真的太震撼了！</li><li>感谢老刘和大哥！<del>回头请你们吃满汉全席！</del>（想得美）<br><img src="/image/yuanshen/8-1.png" alt="xueshan1"><br><img src="/image/yuanshen/8.png" alt="xueshan2"><br><img src="/image/yuanshen/9.png" alt="xueshan3"><br><img src="/image/yuanshen/10.png" alt="xueshan4"><br><img src="/image/yuanshen/11.png" alt="xueshan5"><br><img src="/image/yuanshen/12.png" alt="xueshan5"><br><img src="/image/yuanshen/13.png" alt="xueshan5"><br><img src="/image/yuanshen/14.png" alt="xueshan5"><br><img src="/image/yuanshen/15.png" alt="xueshan5"><br><img src="/image/yuanshen/16.png" alt="xueshan5"></li></ul>]]></content>
+    
+    
+    <summary type="html">原神这款游戏世界宏大，故事完整丰富，踏着中国文化自信的浪潮，又助推着这次浪潮。本篇文章则记录着我的原神世界。</summary>
+    
+    
+    
+    <category term="Genshin Impact" scheme="http://example.com/categories/Genshin-Impact/"/>
+    
+    
+    <category term="game" scheme="http://example.com/tags/game/"/>
+    
+  </entry>
   
   <entry>
     <title>C#中调用Java的类与方法</title>
