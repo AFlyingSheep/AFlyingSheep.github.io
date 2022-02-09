@@ -11,18 +11,9 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/01/27/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9dp/</loc>
+    <loc>http://example.com/2022/01/20/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9dp/</loc>
     
-    <lastmod>2022-01-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/01/26/Yuanshen/</loc>
-    
-    <lastmod>2022-01-25</lastmod>
+    <lastmod>2022-02-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -92,6 +83,13 @@
 
   
   <url>
+    <loc>http://example.com/tags/Tools/</loc>
+    <lastmod>2022-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/Java/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -106,27 +104,13 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Tools/</loc>
-    <lastmod>2022-02-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/game/</loc>
+    <loc>http://example.com/tags/AI/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
 
-  
-  <url>
-    <loc>http://example.com/categories/Algorithm/</loc>
-    <lastmod>2022-02-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
   <url>
     <loc>http://example.com/categories/Other-tools/</loc>
@@ -136,7 +120,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/Genshin-Impact/</loc>
+    <loc>http://example.com/categories/Algorithm/</loc>
+    <lastmod>2022-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/AI/</loc>
     <lastmod>2022-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
