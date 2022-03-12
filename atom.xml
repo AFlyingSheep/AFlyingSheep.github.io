@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-14T09:29:59.658Z</updated>
+  <updated>2022-03-12T14:52:09.371Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论文翻译——基于蜂窝信令数据的智能轨迹推断</title>
+    <link href="http://example.com/2022/03/12/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91-%E4%BF%A1%E4%BB%A4/"/>
+    <id>http://example.com/2022/03/12/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91-%E4%BF%A1%E4%BB%A4/</id>
+    <published>2022-03-12T14:33:03.000Z</published>
+    <updated>2022-03-12T14:52:09.371Z</updated>
+    
+    <content type="html"><![CDATA[        <h1 id="基于蜂窝信令数据的智能轨迹推断"   >          <a href="#基于蜂窝信令数据的智能轨迹推断" class="heading-link"><i class="fas fa-link"></i></a><a href="#基于蜂窝信令数据的智能轨迹推断" class="headerlink" title="基于蜂窝信令数据的智能轨迹推断"></a>基于蜂窝信令数据的智能轨迹推断</h1>      <p>原文：Intelligent Trajectory Inference Through Cellular Signaling Data</p><p><img src="/image/translate/xinling/xinling(1).jpg" alt="1"></p><p><img src="/image/translate/xinling/xinling(2).jpg" alt="2"></p><p><img src="/image/translate/xinling/xinling(3).jpg" alt="3"></p><p><img src="/image/translate/xinling/xinling(4).jpg" alt="4"></p><p><img src="/image/translate/xinling/xinling(5).jpg" alt="5"></p><p><img src="/image/translate/xinling/xinling(6).jpg" alt="6"></p><p><img src="/image/translate/xinling/xinling(7).jpg" alt="7"></p><p><img src="/image/translate/xinling/xinling(8).jpg" alt="8"></p><p><img src="/image/translate/xinling/xinling(9).jpg" alt="9"></p><p><img src="/image/translate/xinling/xinling(10).jpg" alt="10"></p>]]></content>
+    
+    
+    <summary type="html">原论文：Intelligent Trajectory Inference Through Cellular Signaling Data</summary>
+    
+    
+    
+    <category term="Translate" scheme="http://example.com/categories/Translate/"/>
+    
+    
+    <category term="Translate" scheme="http://example.com/tags/Translate/"/>
+    
+  </entry>
   
   <entry>
     <title>数据预处理与特征工程</title>
