@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-03-16T10:28:03.560Z</updated>
+  <updated>2022-03-16T15:07:14.775Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,9 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>BERT — Learning From Paper</title>
+    <link href="http://example.com/2022/03/16/BERT/"/>
+    <id>http://example.com/2022/03/16/BERT/</id>
+    <published>2022-03-16T14:58:08.000Z</published>
+    <updated>2022-03-16T15:07:14.775Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/image/BERT/BERT-1.jpg" alt="1"></p><p><img src="/image/BERT/BERT-2.jpg" alt="2"></p><p><img src="/image/BERT/BERT-3.jpg" alt="3"></p>]]></content>
+    
+    
+    <summary type="html">BERT作为当今很火的Pre Training模型，衍生出许多BERT类型的模型，如ALBERT等等。本篇文章为学习论文《BERT_Pre-training of Deep Bidirectional Transformers for》的学习笔记。</summary>
+    
+    
+    
+    <category term="NLP" scheme="http://example.com/categories/NLP/"/>
+    
+    
+    <category term="Paper Reading" scheme="http://example.com/tags/Paper-Reading/"/>
+    
+  </entry>
+  
+  <entry>
     <title>BERT &amp; Its Family — Learning From Hongyi Li</title>
-    <link href="http://example.com/2022/03/16/Bert_and_its_family/"/>
-    <id>http://example.com/2022/03/16/Bert_and_its_family/</id>
+    <link href="http://example.com/2022/03/16/BERT_and_its_family/"/>
+    <id>http://example.com/2022/03/16/BERT_and_its_family/</id>
     <published>2022-03-16T10:24:53.000Z</published>
     <updated>2022-03-16T10:28:03.560Z</updated>
     
