@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-03-15T12:47:07.244Z</updated>
+  <updated>2022-03-16T10:28:03.560Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BERT &amp; Its Family — Learning From Hongyi Li</title>
+    <link href="http://example.com/2022/03/16/Bert_and_its_family/"/>
+    <id>http://example.com/2022/03/16/Bert_and_its_family/</id>
+    <published>2022-03-16T10:24:53.000Z</published>
+    <updated>2022-03-16T10:28:03.560Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/image/BERT_LHY/BERT-1.jpg" alt="1"></p><p><img src="/image/BERT_LHY/BERT-2.jpg" alt="2"></p><p><img src="/image/BERT_LHY/BERT-3.jpg" alt="3"></p><p><img src="/image/BERT_LHY/BERT-4.jpg" alt="4"></p><p><img src="/image/BERT_LHY/BERT-5.jpg" alt="5"></p><p><img src="/image/BERT_LHY/BERT-6.jpg" alt="6"></p><p><img src="/image/BERT_LHY/BERT-7.jpg" alt="7"></p>]]></content>
+    
+    
+    <summary type="html">BERT作为当今很火的Pre Training模型，衍生出许多BERT类型的模型，如ALBERT等等。本篇文章为学习李宏毅的《BERT&amp;ITS Family》所记录的课堂笔记。</summary>
+    
+    
+    
+    <category term="NLP" scheme="http://example.com/categories/NLP/"/>
+    
+    
+    <category term="Paper Reading" scheme="http://example.com/tags/Paper-Reading/"/>
+    
+  </entry>
   
   <entry>
     <title>Attention is All You Need</title>
