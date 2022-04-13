@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-13T11:06:45.131Z</updated>
+  <updated>2022-04-13T11:25:05.522Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LaTex符号查阅手册</title>
+    <link href="http://example.com/2022/04/13/Latex_symbol/"/>
+    <id>http://example.com/2022/04/13/Latex_symbol/</id>
+    <published>2022-04-13T11:07:50.000Z</published>
+    <updated>2022-04-13T11:25:05.522Z</updated>
+    
+    <content type="html"><![CDATA[        <h1 id="文本数学模式通用符号"   >          <a href="#文本数学模式通用符号" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#文本数学模式通用符号"></a> 文本/数学模式通用符号</h1>      <p><img src="/image/latex/1.png" alt="1" /></p>        <h1 id="希腊字母"   >          <a href="#希腊字母" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#希腊字母"></a> 希腊字母</h1>      <p><img src="/image/latex/2.png" alt="2" /></p>        <h1 id="二元关系符"   >          <a href="#二元关系符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#二元关系符"></a> 二元关系符</h1>      <p><img src="/image/latex/3.png" alt="3" /></p>        <h1 id="二元运算符"   >          <a href="#二元运算符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#二元运算符"></a> 二元运算符</h1>      <p><img src="/image/latex/4.png" alt="4" /></p>        <h1 id="巨算符"   >          <a href="#巨算符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#巨算符"></a> 巨算符</h1>      <p><img src="/image/latex/5.png" alt="5" /></p>        <h1 id="数学重音符号"   >          <a href="#数学重音符号" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#数学重音符号"></a> 数学重音符号</h1>      <p><img src="/image/latex/6.png" alt="6" /></p>        <h1 id="箭头"   >          <a href="#箭头" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#箭头"></a> 箭头</h1>      <p><img src="/image/latex/7.png" alt="7" /></p>        <h1 id="作为重音的箭头符号"   >          <a href="#作为重音的箭头符号" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#作为重音的箭头符号"></a> 作为重音的箭头符号</h1>      <p><img src="/image/latex/8.png" alt="8" /></p>        <h1 id="定界符"   >          <a href="#定界符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#定界符"></a> 定界符</h1>      <p><img src="/image/latex/9.png" alt="9" /></p>        <h1 id="用于行间公式的大定界符"   >          <a href="#用于行间公式的大定界符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#用于行间公式的大定界符"></a> 用于行间公式的大定界符</h1>      <p><img src="/image/latex/10.png" alt="10" /></p>        <h1 id="其他符号"   >          <a href="#其他符号" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#其他符号"></a> 其他符号</h1>      <p><img src="/image/latex/11.png" alt="11" /></p>        <h1 id="ams希腊字母和希伯来字母"   >          <a href="#ams希腊字母和希伯来字母" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#ams希腊字母和希伯来字母"></a> AMS希腊字母和希伯来字母</h1>      <p><img src="/image/latex/12.png" alt="12" /></p>        <h1 id="ams二元关系符"   >          <a href="#ams二元关系符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#ams二元关系符"></a> AMS二元关系符</h1>      <p><img src="/image/latex/13.png" alt="13" /></p>        <h1 id="ams二元运算符"   >          <a href="#ams二元运算符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#ams二元运算符"></a> AMS二元运算符</h1>      <p><img src="/image/latex/14.png" alt="14" /></p>        <h1 id="ams箭头"   >          <a href="#ams箭头" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#ams箭头"></a> AMS箭头</h1>      <p><img src="/image/latex/15.png" alt="15" /></p>        <h1 id="ams反义二元关系符和箭头"   >          <a href="#ams反义二元关系符和箭头" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#ams反义二元关系符和箭头"></a> AMS反义二元关系符和箭头</h1>      <p><img src="/image/latex/16.png" alt="16" /></p>        <h1 id="ams定界符"   >          <a href="#ams定界符" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#ams定界符"></a> AMS定界符</h1>      <p><img src="/image/latex/17.png" alt="17" /></p>        <h1 id="ams其它符号"   >          <a href="#ams其它符号" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#ams其它符号"></a> AMS其它符号</h1>      <p><img src="/image/latex/18.png" alt="18" /></p><p>转载自：<span class="exturl"><a class="exturl__link"   href="https://blog.csdn.net/wangmeitingaa/article/details/88825621" >(44条消息) LaTeX符号大全-基于lshort-zh-cn_王美庭的博客-CSDN博客_latex符号</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p><p>参考文献：<span class="exturl"><a class="exturl__link"   href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf" >https://mirrors.tuna.tsinghua.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>]]></content>
+    
+    
+    <summary type="html">LATEX常用符号收集！随时查阅。</summary>
+    
+    
+    
+    <category term="Math" scheme="http://example.com/categories/Math/"/>
+    
+    
+    <category term="Math" scheme="http://example.com/tags/Math/"/>
+    
+  </entry>
   
   <entry>
     <title>线性代数知识复习(二)</title>

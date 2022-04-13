@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/04/13/Latex_symbol/</loc>
+    
+    <lastmod>2022-04-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/04/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%BA%8C)/</loc>
     
     <lastmod>2022-04-13</lastmod>
@@ -182,13 +191,6 @@
 
   
   <url>
-    <loc>http://example.com/tags/NLP/</loc>
-    <lastmod>2022-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/Paper-Reading/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -210,6 +212,20 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/Math/</loc>
+    <lastmod>2022-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/NLP/</loc>
+    <lastmod>2022-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/Tools/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -218,13 +234,6 @@
   
   <url>
     <loc>http://example.com/tags/AI/</loc>
-    <lastmod>2022-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Math/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -254,6 +263,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/categories/Math/</loc>
+    <lastmod>2022-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/categories/Other-tools/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -262,13 +278,6 @@
   
   <url>
     <loc>http://example.com/categories/AI/</loc>
-    <lastmod>2022-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/Math/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
