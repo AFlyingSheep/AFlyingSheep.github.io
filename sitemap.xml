@@ -203,14 +203,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/NLP/</loc>
+    <loc>http://example.com/tags/Tools/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Tools/</loc>
+    <loc>http://example.com/tags/NLP/</loc>
     <lastmod>2022-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
