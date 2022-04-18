@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="计算机科学专业选修——《信息安全》学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《信息安全》笔记">
+<meta property="og:url" content="http://example.com/2022/04/19/xinxianquan/index.html">
+<meta property="og:site_name" content="AFlyingSheep&#39;s Blog">
+<meta property="og:description" content="计算机科学专业选修——《信息安全》学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/xinxianquan/1.png">
+<meta property="og:image" content="http://example.com/image/xinxianquan/2.png">
+<meta property="og:image" content="http://example.com/image/xinxianquan/3.png">
+<meta property="og:image" content="http://example.com/image/xinxianquan/4.png">
+<meta property="og:image" content="http://example.com/image/xinxianquan/5.png">
+<meta property="og:image" content="http://example.com/image/xinxianquan/6.png">
+<meta property="og:image" content="http://example.com/image/xinxianquan/7.png">
+<meta property="og:image" content="http://example.com/image/xinxianquan/8.png">
+<meta property="og:image" content="http://example.com/image/xinxianquan/9.png">
+<meta property="og:image" content="http://example.com/image/xinxianquan/10.png">
+<meta property="og:image" content="http://example.com/image/xinxianquan/11.png">
+<meta property="article:published_time" content="2022-04-19T14:36:44.000Z">
+<meta property="article:modified_time" content="2022-04-18T16:25:09.324Z">
+<meta property="article:author" content="Johnson Shuangjian">
+<meta property="article:tag" content="CS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/xinxianquan/1.png"><title>《信息安全》笔记 | AFlyingSheep's Blog</title><link ref="canonical" href="http://example.com/2022/04/19/xinxianquan/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"carbon","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="AFlyingSheep's Blog" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">AFlyingSheep's Blog</div><div class="header-banner-info__subtitle">Keep coding, keep thinking.</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">《信息安全》笔记</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-19</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">2.2k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">12分</span></span></div></header><div class="post-body">
+        <h1 id="密码学基础"   >
+          <a href="#密码学基础" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#密码学基础"></a> 密码学基础</h1>
+      
+
+        <h2 id="密钥基本功能"   >
+          <a href="#密钥基本功能" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#密钥基本功能"></a> 密钥基本功能</h2>
+      
+<ol>
+<li>所有算法的安全性基于密钥的安全性，而不是基于算法细节的安全性，即算法可以公开。</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mo>:</mo><mspace width="0.5em"/><msub><mi>e</mi><mi>k</mi></msub><mo>:</mo><mi>M</mi><mo>→</mo><mi>C</mi><mspace linebreak="newline"></mspace><mi>u</mi><mi>n</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mo>:</mo><mspace width="0.5em"/><msub><mi>d</mi><mi>k</mi></msub><mo>:</mo><mi>C</mi><mo>→</mo><mi>M</mi><mspace linebreak="newline"></mspace><msub><mi>d</mi><mi>k</mi></msub><mo stretchy="false">(</mo><msub><mi>e</mi><mi>k</mi></msub><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">lock:\enspace e_k:M\rightarrow C\\ unlock:\enspace d_k:C\rightarrow M\\d_k(e_k(m))=m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.5em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace" style="margin-right:0.5em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span></li>
+<li>密码学包括密码编码学和密码分析学。</li>
+<li>密码学的作用：数据加密、身份认证、数据完整性、不可否认性。</li>
+</ol>
+
+        <h2 id="密码分析简介"   >
+          <a href="#密码分析简介" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#密码分析简介"></a> 密码分析简介</h2>
+      
+<ol>
+<li>密钥通过非密码分析方式的丢失叫泄露。</li>
+<li>密码体制攻击方式：穷举攻击、密码分析。</li>
+<li>Kerckhoff假设：分析一个密码系统是否安全，一般是在假定攻击者所使用的密码系统情况下进行分析。</li>
+<li>除一次一密外，没有绝对安全的加密算法。</li>
+<li>密码分析方法：线性密码分析、差分密码分析。</li>
+<li>计算安全性：
+<ol>
+<li>破译该密码的成本超过被加密信息的价值。</li>
+<li>破解该密码的时间超过该信息有用的生命周期。</li>
+</ol>
+</li>
+</ol>
+
+        <h2 id="密码学历史"   >
+          <a href="#密码学历史" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#密码学历史"></a> 密码学历史</h2>
+      
+<ol>
+<li>从原理上可分为：对称（单钥，常规）密码体制、非对称（双钥、公开）密码体制。</li>
+</ol>
+
+        <h2 id="古典加密"   >
+          <a href="#古典加密" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#古典加密"></a> 古典加密</h2>
+      
+<ol>
+<li>主要使用字符替换或者字符位置置乱（移位）技术。</li>
+<li>传统密码学有三种类型的替换密码：单表替换密码、多表替换密码、多字母组替换密码。</li>
+</ol>
+
+        <h3 id="单表替换"   >
+          <a href="#单表替换" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#单表替换"></a> 单表替换</h3>
+      
+<p>加法密码、乘法密码（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">\varphi(n)=12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">φ</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span></span></span></span>，与26互素的）、仿射密码（乘法与加法混在一块，可逆性条件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mi>c</mi><mi>d</mi><mo stretchy="false">(</mo><mi>k</mi><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mi>φ</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>312</mn></mrow><annotation encoding="application/x-tex">gcd(k,n)=1, \varphi(n)=312</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">c</span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">φ</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">1</span><span class="mord">2</span></span></span></span>）、改进（字母替换表）</p>
+
+        <h3 id="多表替换"   >
+          <a href="#多表替换" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#多表替换"></a> 多表替换</h3>
+      
+<ol>
+<li>
+<p>单表代换密码加密后密文具有明文特征，使用多表替换密码和多字母替换密码改进。</p>
+<ol>
+<li>
+<p>多表替换密码：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><msub><mi>E</mi><mi>k</mi></msub><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>f</mi><mn>1</mn></msub><mo stretchy="false">(</mo><msub><mi>m</mi><mn>1</mn></msub><mo stretchy="false">)</mo><msub><mi>f</mi><mn>2</mn></msub><mo stretchy="false">(</mo><msub><mi>m</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo>…</mo></mrow><annotation encoding="application/x-tex">C=E_k(m)=f_1(m_1)f_2(m_2)\dots</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span></span></span></span></p>
+<ul>
+<li>
+<p>若代换系列为非周期无限序列，对应密码为非周期多表代换密码，属于一次一密密码。</p>
+</li>
+<li>
+<p>维吉尼亚密码：重复写单词密钥，并与明文进行相加并%26。</p>
+</li>
+<li>
+<p>一次一密方案：非周期多表代换密码。使用与明文一样长且无重复的随机密钥来加密明文。使用一次后便不再使用。</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+
+        <h3 id="多字母替代密码"   >
+          <a href="#多字母替代密码" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#多字母替代密码"></a> 多字母替代密码</h3>
+      
+<p>优点：容易隐藏字母的自然出现频率，有利于对抗统计分析。</p>
+<ol>
+<li>
+<p>Playfair密码：根据密钥构造5×5矩阵，作为字母替代矩阵，将明文按每两个字母分成一组，形成多个双字母组，每次以双字母组为一个单位进行操作。根据字母替换矩阵对双字母组依次进行替换（i，j算一个字母）</p>
+<p>​			<img src="/image/xinxianquan/1.png" alt="1" /></p>
+<p>​			<img src="/image/xinxianquan/2.png" alt="2" /></p>
+</li>
+<li>
+<p>Hill密码</p>
+<p>将m个明文字母替换成m个秘文字母。</p>
+<p>加密过程：</p>
+<ol>
+<li>选择一个m阶的可逆方阵K，称为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mi>i</mi><mi>l</mi><msub><mi>l</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">Hill_m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>密码的加密矩阵。</li>
+<li>将明文字母以m个字母为单位进行分组。</li>
+<li>对每m个字母为一组的明文字母，用它对应的值构成一个m维向量M</li>
+<li>计算密文的值<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><mi>K</mi><mi>M</mi><mspace width="0.5em"/><mi>m</mi><mi>o</mi><mi>d</mi><mn>26</mn></mrow><annotation encoding="application/x-tex">C=KM\enspace mod26</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord">2</span><span class="mord">6</span></span></span></span>，然后反查字母表的值，得到对应的m个密文字母</li>
+<li>同样明文的其他组的密文。</li>
+</ol>
+</li>
+</ol>
+
+        <h3 id="移位密码"   >
+          <a href="#移位密码" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#移位密码"></a> 移位密码</h3>
+      
+<ol>
+<li>
+<p>倒置法</p>
+<ol>
+<li>完全倒置法：把明文中的字母按顺序倒过来写。</li>
+<li>分组倒置法：把铭文中的字母按固定长度分组后每组字母串倒过来写。</li>
+</ol>
+</li>
+<li>
+<p>列换位法</p>
+<ol>
+<li>
+<p>列换位法：</p>
+<p>步骤：</p>
+<ul>
+<li>将明文字符分割成为k个一行的分组，并按一组后面跟着另一组的形式排好</li>
+<li>不全的组可以用不常使用的字符填满</li>
+<li>依次取各列写成一串</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>矩阵换位法</p>
+<p>把明文中的字母按给定的顺序安排在一矩阵中，然后用另一种顺序选出矩阵的字母来产生密文。</p>
+</li>
+</ol>
+
+        <h3 id="古典密码学总结"   >
+          <a href="#古典密码学总结" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#古典密码学总结"></a> 古典密码学总结</h3>
+      
+<p><img src="/image/xinxianquan/3.png" alt="3" /></p>
+
+        <h2 id="分组密码"   >
+          <a href="#分组密码" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#分组密码"></a> 分组密码</h2>
+      
+<p>也称块密码，将明文消息经编码表示后的数字序列划分为若干固定长度的组，每组分别在密钥控制下转换成等长密文的分组输出。</p>
+<ol>
+<li>
+<p>特点：</p>
+<ol>
+<li>
+<p>密文仅与给定的密码算法和密钥相关。</p>
+</li>
+<li>
+<p>与被处理的明文数据段在整个明文中所处的位置无关。</p>
+</li>
+<li>
+<p>总是以大于64bit的数据块作为加密单位，给定相同明文数据块加密后得到相同的密文数据块。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>分组密码的设计在于找到一种算法，能在密钥控制下从一个足够大且足够好的置换子集中，简单而迅速地选出一个置换，用来对当前输入的数字组进行加密变换。</p>
+</li>
+<li>
+<p>设计原则</p>
+<ol>
+<li>足够大的分组长度</li>
+<li>密钥空间尽可能大</li>
+<li>足够强的密码算法复杂度</li>
+<li>软件实现尽量采用子块和简单运算</li>
+<li>硬件实现最好加密与解密使用相同结构。</li>
+</ol>
+</li>
+<li>
+<p><strong>置换</strong>：设S为一有限集合，f 为S到S的一一映射，则f 为S上的一个置换。</p>
+<p><strong>混淆</strong>：将作用于明文的密钥和密文之间的关系复杂化，使明文和密文之间、密文和密钥之间的统计相关性极小化，从而使<strong>统计分析攻击法不能奏效</strong>。</p>
+<p><strong>扩散</strong>：将每一位明文及密钥数字的影响尽可能迅速地散布到较多个输出的密文数字中，以便<strong>隐蔽明文</strong>数字的<strong>统计特性</strong>。</p>
+</li>
+</ol>
+
+        <h3 id="数据加密标准des"   >
+          <a href="#数据加密标准des" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#数据加密标准des"></a> <strong>数据加密标准</strong>DES</h3>
+      
+<p>对称、保密性仅取决于密钥，算法公开。</p>
+<ol>
+<li>
+<p>初始变换：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo><mo>=</mo><mi>X</mi><mo stretchy="false">(</mo><mi>I</mi><mi>P</mi><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Y(i)=X(IP(i))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></p>
+<p><img src="/image/xinxianquan/4.png" alt="4" /></p>
+</li>
+</ol>
+<ul>
+<li>来源：IP 中各列元素位置号数相差为8 ，相当于将原明文各字节<strong>按列写出</strong>，各列比特经过偶采样和奇采样置换后再对<em>各行进行逆序</em>，将阵中元素按行读得的结果。</li>
+</ul>
+<ol start="2">
+<li>
+<p>中间过程：不断迭代（扩展置换、子密钥K1、S盒替代、P盒）</p>
+<p><img src="/image/xinxianquan/5.png" alt="5" /></p>
+<ol>
+<li>
+<p>扩展置换（E盒）：此运算是将数据的右半部分Ri从32b扩展到了48b。由于这个运算改变了位的次序，重复了某些位，故被称为扩展置换。<strong>目的</strong>：它产生了与密钥同长度的数据以进行异或运算，并提供了更长的结果，使得在替代运算时能进行压缩。</p>
+<p><img src="/image/xinxianquan/6.png" alt="6" /></p>
+<p><img src="/image/xinxianquan/7.png" alt="7" /></p>
+</li>
+<li>
+<p>S盒替换</p>
+<p>8个S盒，每个S盒有6位输入，4位输出，同时8个S盒是不相同的。</p>
+<p><img src="/image/xinxianquan/8.png" alt="8" /></p>
+<p>S盒来源：没公开…</p>
+</li>
+<li>
+<p>P盒置换：P盒置换也称直接置换，把每输入位映射到输出位，任意一位不能被映射两次，也不能被略去。</p>
+<p><img src="/image/xinxianquan/9.png" alt="9" /></p>
+<p>最后将P盒置换的结果与最初的64位分组的左半部分异或，然后左、右半部分交换，接着开始另一轮。</p>
+</li>
+<li>
+<p>子密钥生成：</p>
+<ol>
+<li>
+<p>开始时不考虑每个字节的第8位，DES的密钥由<strong>64</strong>位减至<strong>56</strong>位。每个字节第8位可作为奇偶校验位以确保密钥不发生错误。此过程称为<strong>PC-1置换</strong></p>
+<p><img src="/image/xinxianquan/10.png" alt="10" /></p>
+</li>
+<li>
+<p>循环左移</p>
+</li>
+<li>
+<p><strong>PC-2置换</strong>：从56位中选出48位。它不仅置换了每位的顺序，同时也选择子密钥，也称<strong>选择置换</strong>。删除的8位分别是第9、18、22、25、35、38、43、54位。</p>
+<p><img src="/image/xinxianquan/11.png" alt="11" /></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>DES解密过程</p>
+<p>在经过所有的<strong>代替</strong>、<strong>置换</strong>、<strong>异或</strong>和<strong>循环移动</strong>之后，获得了这样一个非常有用的性质：<strong>加密和解密可使用相同的算法</strong>。</p>
+<p>DES使得用相同的函数来加密或解密每个分组成为可能，<strong>二者的唯一不同之处是密钥的次序相反</strong>。这就是说，如果各轮的加密密钥分别是K1，K2，K3…，K16，那么解密密钥就是K16，K15，K14……，K1。</p>
+</li>
+</ol>
+
+        <h3 id="多重des"   >
+          <a href="#多重des" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#多重des"></a> 多重DES</h3>
+      
+<p>解决密钥长度的问题的办法之一是采用多重DES。</p>
+<ul>
+<li>
+<p>双重DES</p>
+<ul>
+<li>双重DES使用两个长度为56位DES密钥，先用密钥K1进行DES加密，对加密后的密文再使用密钥K2进行DES加密，得到最终密文。</li>
+</ul>
+<ul>
+<li>双重DES很难抵抗中间相遇攻击。</li>
+</ul>
+</li>
+<li>
+<p>三重DES</p>
+<ul>
+<li>
+<p>三重DES使用三个长度为56位DES密钥，先用密钥K1进行DES加密，对加密后的密文再使用密钥K2进行DES解密，最后用密钥K3进行DES加密，得到最终密文。</p>
+<p>最常用的三重DES,算法中选取K1 ＝ K3 。</p>
+</li>
+<li>
+<p>DES-EEE3、DES-EDE3、DES-EEE2、DES-EDE2</p>
+</li>
+</ul>
+</li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Johnson Shuangjian</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/04/19/xinxianquan/">http://example.com/2022/04/19/xinxianquan/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/CS/">CS</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/04/13/Latex_symbol/"><span class="paginator-prev__text">LaTex符号查阅手册</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">
+           密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.</span> <span class="toc-text">
+           密钥基本功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">
+           密码分析简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8E%86%E5%8F%B2"><span class="toc-number">1.3.</span> <span class="toc-text">
+           密码学历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%85%B8%E5%8A%A0%E5%AF%86"><span class="toc-number">1.4.</span> <span class="toc-text">
+           古典加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%A1%A8%E6%9B%BF%E6%8D%A2"><span class="toc-number">1.4.1.</span> <span class="toc-text">
+           单表替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9B%BF%E6%8D%A2"><span class="toc-number">1.4.2.</span> <span class="toc-text">
+           多表替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%AD%97%E6%AF%8D%E6%9B%BF%E4%BB%A3%E5%AF%86%E7%A0%81"><span class="toc-number">1.4.3.</span> <span class="toc-text">
+           多字母替代密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E4%BD%8D%E5%AF%86%E7%A0%81"><span class="toc-number">1.4.4.</span> <span class="toc-text">
+           移位密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E5%AD%A6%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.5.</span> <span class="toc-text">
+           古典密码学总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81"><span class="toc-number">1.5.</span> <span class="toc-text">
+           分组密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86des"><span class="toc-number">1.5.1.</span> <span class="toc-text">
+           数据加密标准DES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%87%8Ddes"><span class="toc-number">1.5.2.</span> <span class="toc-text">
+           多重DES</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/userhead.png" alt="avatar"></div><p class="sidebar-ov-author__text">Johnson Kerbal</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/AFlyingSheep" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="mailto:Johnsonshuangjian@outlook.com" target="_blank" rel="noopener" data-popover="向我发送邮件" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open-text"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=398287312" target="_blank" rel="noopener" data-popover="向我发送QQ消息" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">18</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021~2022</span><span class="footer__icon"><i class="fab fa-codepen"></i></span><span>Johnson Shuangjian</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="100,100,100" opacity="0.6" count="99" zIndex="-1"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":-5,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
