@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="计算机专业课《数据结构与算法》进行全面复习的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《数据结构与算法》复习">
+<meta property="og:url" content="http://example.com/2022/06/02/Data_strct/index.html">
+<meta property="og:site_name" content="AFlyingSheep&#39;s Blog">
+<meta property="og:description" content="计算机专业课《数据结构与算法》进行全面复习的笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-02T07:59:58.000Z">
+<meta property="article:modified_time" content="2022-06-02T08:00:29.758Z">
+<meta property="article:author" content="Johnson Shuangjian">
+<meta property="article:tag" content="CS">
+<meta name="twitter:card" content="summary"><title>《数据结构与算法》复习 | AFlyingSheep's Blog</title><link ref="canonical" href="http://example.com/2022/06/02/Data_strct/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"carbon","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="AFlyingSheep's Blog" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">AFlyingSheep's Blog</div><div class="header-banner-info__subtitle">Keep coding, keep thinking.</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">《数据结构与算法》复习</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-06-02</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-06-02</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">626</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">4分</span></span></div></header><div class="post-body">
+        <h1 id="栈和队列"   >
+          <a href="#栈和队列" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#栈和队列"></a> 栈和队列</h1>
+      
+<ol>
+<li>
+<p>栈的应用</p>
+<ol>
+<li>数值转换</li>
+<li>括号匹配的检验</li>
+<li>行编辑程序</li>
+<li>迷宫求解（DFS问题）</li>
+<li>表达式求值</li>
+</ol>
+</li>
+<li>
+<p>栈与递归的实现</p>
+<ol>
+<li>典型题：汉诺塔问题</li>
+<li>运行被调用函数：(1) 将所有的实在参数、返回地址等信息传递给被调用函数保存；(2)为被调用函数的局部变量分配存储区；(3) 将控制转移到被调函数的入口。</li>
+<li>返回调用函数：(1) 保存被调函数的计算结果；(2) 释放被调函数的数据区；(3) 依照被调函数保存的返回地址将控制转移到调用函数。</li>
+</ol>
+</li>
+<li>
+<p>队列的应用</p>
+<ol>
+<li>离散事件的模拟</li>
+</ol>
+</li>
+</ol>
+
+        <h1 id="串"   >
+          <a href="#串" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#串"></a> 串</h1>
+      
+<pre><code>1. 堆分配存储表示
+
+以一组地址连续的存储单元存放串值字符序列，但存储空间是由程序执行过程中动态分配而得的，存在堆中（由malloc()和free()来管理）。
+
+2. 存储密度 = $\frac&#123;串值所占的存储位&#125;&#123;实际分配的存储位&#125;$（对于链式存储方式）
+
+3. 模式匹配算法——KMP算法（时间复杂度$O(n+m)$）
+
+	1. 前缀：不包含最后一个字符的所有以第一个字符开头的连续子字符串；
+
+	2. 后缀：不包含第一个字符的所有以最后一个字符结尾的连续子字符串；
+
+    eg. 最大相等前后缀a为0，aa为1,aab为0，aabaa为2
+
+	3. 每次匹配到第i个字符不同时，模式串比较指针回到第0~i-1字符
+
+	4. 的最大前后缀长度的位置。
+
+	5. 用next数组代表匹配失败后模式串跳转的位置，next数组求法：
+
+    <figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化</span></span><br><span class="line"><span class="keyword">int</span> j = <span class="number">-1</span>;</span><br><span class="line">next[<span class="number">0</span>] = j;</span><br><span class="line"></span><br><span class="line"><span class="comment">// j指向前缀位置，i指向后缀位置</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 前后缀不同情况</span></span><br><span class="line">    <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; s[i] != s[j + <span class="number">1</span>]) &#123;</span><br><span class="line">        j = next[j];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 前后缀相同情况</span></span><br><span class="line">    <span class="keyword">if</span> (s[i] == s[j + <span class="number">1</span>]) j++;</span><br><span class="line">    next[i] = j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+	6. 模式串匹配算法
+
+    <figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// next数组起始位置记录为-1</span></span><br><span class="line"><span class="keyword">int</span> j = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">    <span class="comment">// 不匹配情况</span></span><br><span class="line">    <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; s[i] != t[j + <span class="number">1</span>]) </span><br><span class="line">        <span class="comment">// j寻找之前位置</span></span><br><span class="line">        j = next[j];</span><br><span class="line">    <span class="comment">// 匹配，i,j同时向后移动</span></span><br><span class="line">    <span class="keyword">if</span> (s[i] == t[j + <span class="number">1</span>]) </span><br><span class="line">        j++;</span><br><span class="line">    <span class="comment">// 找到了模式串t</span></span><br><span class="line">    <span class="keyword">if</span> (j == (t.<span class="built_in">size</span>() - <span class="number">1</span>)) <span class="keyword">return</span> (i - t.<span class="built_in">size</span>() + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+4. 用前缀表判断字符串是否可以由相同子串构成。
+
+LeetCode.459
+
+5. </code></pre>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Johnson Shuangjian</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/06/02/Data_strct/">http://example.com/2022/06/02/Data_strct/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/CS/">CS</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/05/04/yuesefu/"><span class="paginator-prev__text">约瑟夫环问题</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97"><span class="toc-number">1.</span> <span class="toc-text">
+           栈和队列</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%B2"><span class="toc-number">2.</span> <span class="toc-text">
+           串</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/userhead.png" alt="avatar"></div><p class="sidebar-ov-author__text">Johnson Kerbal</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/AFlyingSheep" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="mailto:Johnsonshuangjian@outlook.com" target="_blank" rel="noopener" data-popover="向我发送邮件" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open-text"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=398287312" target="_blank" rel="noopener" data-popover="向我发送QQ消息" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">20</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021~2022</span><span class="footer__icon"><i class="fab fa-codepen"></i></span><span>Johnson Shuangjian</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="100,100,100" opacity="0.6" count="99" zIndex="-1"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":-5,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
