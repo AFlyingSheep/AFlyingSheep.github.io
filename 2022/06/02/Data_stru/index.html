@@ -1,0 +1,511 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="计算机专业课《数据结构与算法》进行全面复习的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《数据结构与算法》复习">
+<meta property="og:url" content="http://example.com/2022/06/02/Data_stru/index.html">
+<meta property="og:site_name" content="AFlyingSheep&#39;s Blog">
+<meta property="og:description" content="计算机专业课《数据结构与算法》进行全面复习的笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/data_stru/image-20220605110607239.png">
+<meta property="og:image" content="http://example.com/image/data_stru/image-20220605144519394.png">
+<meta property="og:image" content="http://example.com/image/data_stru/image-20220605144500988.png">
+<meta property="og:image" content="http://example.com/image/data_stru/image-20220605144650493.png">
+<meta property="article:published_time" content="2022-06-02T07:59:58.000Z">
+<meta property="article:modified_time" content="2022-06-05T08:39:13.358Z">
+<meta property="article:author" content="Johnson Shuangjian">
+<meta property="article:tag" content="CS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/data_stru/image-20220605110607239.png"><title>《数据结构与算法》复习 | AFlyingSheep's Blog</title><link ref="canonical" href="http://example.com/2022/06/02/Data_stru/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"carbon","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="AFlyingSheep's Blog" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">AFlyingSheep's Blog</div><div class="header-banner-info__subtitle">Keep coding, keep thinking.</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">《数据结构与算法》复习</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-06-02</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-06-05</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">4k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">27分</span></span></div></header><div class="post-body">
+        <h1 id="栈和队列"   >
+          <a href="#栈和队列" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#栈和队列"></a> 栈和队列</h1>
+      
+<ol>
+<li>
+<p>栈的应用</p>
+<ol>
+<li>数值转换</li>
+<li>括号匹配的检验</li>
+<li>行编辑程序</li>
+<li>迷宫求解（DFS问题）</li>
+<li>表达式求值</li>
+</ol>
+</li>
+<li>
+<p>栈与递归的实现</p>
+<ol>
+<li>典型题：汉诺塔问题</li>
+<li>运行被调用函数：(1) 将所有的实在参数、返回地址等信息传递给被调用函数保存；(2)为被调用函数的局部变量分配存储区；(3) 将控制转移到被调函数的入口。</li>
+<li>返回调用函数：(1) 保存被调函数的计算结果；(2) 释放被调函数的数据区；(3) 依照被调函数保存的返回地址将控制转移到调用函数。</li>
+</ol>
+</li>
+<li>
+<p>队列的应用</p>
+<ol>
+<li>离散事件的模拟</li>
+</ol>
+</li>
+</ol>
+
+        <h1 id="串"   >
+          <a href="#串" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#串"></a> 串</h1>
+      
+<ol>
+<li>堆分配存储表示</li>
+</ol>
+<ul>
+<li>以一组地址连续的存储单元存放串值字符序列，但存储空间是由程序执行过程中动态分配而得的，存在堆中（由malloc()和free()来管理）。</li>
+</ul>
+<ol start="2">
+<li>
+<p>存储密度 = <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">串</mi><mi mathvariant="normal">值</mi><mi mathvariant="normal">所</mi><mi mathvariant="normal">占</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">存</mi><mi mathvariant="normal">储</mi><mi mathvariant="normal">位</mi></mrow><mrow><mi mathvariant="normal">实</mi><mi mathvariant="normal">际</mi><mi mathvariant="normal">分</mi><mi mathvariant="normal">配</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">存</mi><mi mathvariant="normal">储</mi><mi mathvariant="normal">位</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{串值所占的存储位}{实际分配的存储位}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.739em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.394em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">实</span><span class="mord cjk_fallback mtight">际</span><span class="mord cjk_fallback mtight">分</span><span class="mord cjk_fallback mtight">配</span><span class="mord cjk_fallback mtight">的</span><span class="mord cjk_fallback mtight">存</span><span class="mord cjk_fallback mtight">储</span><span class="mord cjk_fallback mtight">位</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">串</span><span class="mord cjk_fallback mtight">值</span><span class="mord cjk_fallback mtight">所</span><span class="mord cjk_fallback mtight">占</span><span class="mord cjk_fallback mtight">的</span><span class="mord cjk_fallback mtight">存</span><span class="mord cjk_fallback mtight">储</span><span class="mord cjk_fallback mtight">位</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>（对于链式存储方式）</p>
+</li>
+<li>
+<p>模式匹配算法——KMP算法（时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n+m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>）</p>
+<ol>
+<li>
+<p>前缀：不包含最后一个字符的所有以第一个字符开头的连续子字符串；</p>
+</li>
+<li>
+<p>后缀：不包含第一个字符的所有以最后一个字符结尾的连续子字符串；</p>
+<ul>
+<li>eg. 最大相等前后缀a为0，aa为1,aab为0，aabaa为2</li>
+</ul>
+</li>
+<li>
+<p>每次匹配到第i个字符不同时，模式串比较指针回到第0~i-1字符</p>
+</li>
+<li>
+<p>的最大前后缀长度的位置。</p>
+</li>
+<li>
+<p>用next数组代表匹配失败后模式串跳转的位置，next数组求法：</p>
+</li>
+</ol>
+ <figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化</span></span><br><span class="line"><span class="keyword">int</span> j = <span class="number">-1</span>;</span><br><span class="line">next[<span class="number">0</span>] = j;</span><br><span class="line">    </span><br><span class="line"><span class="comment">// j指向前缀位置，i指向后缀位置</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// 前后缀不同情况</span></span><br><span class="line">    <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; s[i] != s[j + <span class="number">1</span>]) &#123;</span><br><span class="line">        j = next[j];</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// 前后缀相同情况</span></span><br><span class="line">    <span class="keyword">if</span> (s[i] == s[j + <span class="number">1</span>]) j++;</span><br><span class="line">    next[i] = j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<ol start="6">
+<li>模式串匹配算法</li>
+</ol>
+ <figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// next数组起始位置记录为-1</span></span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="comment">// 不匹配情况</span></span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; s[i] != t[j + <span class="number">1</span>]) </span><br><span class="line">            <span class="comment">// j寻找之前位置</span></span><br><span class="line">            j = next[j];</span><br><span class="line">        <span class="comment">// 匹配，i,j同时向后移动</span></span><br><span class="line">        <span class="keyword">if</span> (s[i] == t[j + <span class="number">1</span>]) </span><br><span class="line">            j++;</span><br><span class="line">        <span class="comment">// 找到了模式串t</span></span><br><span class="line">        <span class="keyword">if</span> (j == (t.<span class="built_in">size</span>() - <span class="number">1</span>)) <span class="keyword">return</span> (i - t.<span class="built_in">size</span>() + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li>
+<p>用前缀表判断字符串是否可以由相同子串构成。</p>
+<p>LeetCode.459</p>
+</li>
+</ol>
+
+        <h1 id="数组和广义表"   >
+          <a href="#数组和广义表" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#数组和广义表"></a> 数组和广义表</h1>
+      
+<ol>
+<li>随机存储：计算各个元素存储位置的时间相等，存储数组中任一元素的时间也相等。</li>
+<li>稀疏矩阵
+<ol>
+<li>基于三元组存储的稀疏矩阵转置方法：
+<ol>
+<li>按列序转置：多次扫描M的三元组，找到第一行、第二行、第n行的元素，由于M按行排序，故得到的顺序直接为在T中的顺序。（效率低下，时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo>∗</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n*m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>)</li>
+<li>快速转置：先扫描一遍M，记录每一行元素的个数，（需要额外的向量空间存储），在直接遍历M中的元素，直接确定转置后的位置。</li>
+</ol>
+</li>
+<li>十字链表：每个非零元用含有五个域的结点表示（行、列、值、以及同行、同列下一个非零元），适合按行及按列操作的问题。</li>
+</ol>
+</li>
+</ol>
+
+        <h1 id="树和二叉树"   >
+          <a href="#树和二叉树" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#树和二叉树"></a> 树和二叉树</h1>
+      
+<ol>
+<li>
+<p>树的同构：两棵树结构完全相同。（关系相同，字母可以不一样）</p>
+</li>
+<li>
+<p>二叉树的性质</p>
+<ol>
+<li>二叉树的第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>层上最多有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{n-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>个结点</li>
+<li>深度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>的二叉树最多有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{k}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.932438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个结点</li>
+<li>对任何一个二叉树，叶子节点（度为0）的个数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">n_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，度为2的结点个数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">n_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>=</mo><msub><mi>n</mi><mn>2</mn></msub><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_0=n_2+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>证明：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><msub><mi>n</mi><mn>0</mn></msub><mo>+</mo><msub><mi>n</mi><mn>1</mn></msub><mo>+</mo><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn><mo>+</mo><msub><mi>n</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><msub><mi>n</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">N=n_0+n_1+n_2=1+n_1+2n_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，故<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>=</mo><msub><mi>n</mi><mn>2</mn></msub><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_0=n_2+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+</ul>
+</li>
+<li>具有<em>n</em>个结点的完全二叉树的深度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">⌊</mo><mi>l</mi><mi>o</mi><msubsup><mi>g</mi><mn>2</mn><mi>n</mi></msubsup><mo stretchy="false">⌋</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lfloor log_2^n\rfloor+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌊</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-2.4518920000000004em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24810799999999997em;"><span></span></span></span></span></span></span><span class="mclose">⌋</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+<li>如果对一棵有n个结点的完全二叉树的结点按层序编号，则对任一结点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">i(1\le i\le n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">i</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.79549em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，有：
+<ol>
+<li>如果i=1，则结点i是二叉树的根，无双亲；如果i&gt;1，其双亲为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">⌊</mo><mi>i</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor i/2\rfloor</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⌊</span><span class="mord mathdefault">i</span><span class="mord">/</span><span class="mord">2</span><span class="mclose">⌋</span></span></span></span></li>
+<li>如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>i</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2i\le n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.79549em;vertical-align:-0.13597em;"></span><span class="mord">2</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，则其左孩子是2i；如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>i</mi><mo>&gt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2i&gt;n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69862em;vertical-align:-0.0391em;"></span><span class="mord">2</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，则结点i无左孩子；</li>
+<li>如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>i</mi><mo>+</mo><mn>1</mn><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2i+1\le n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，则其右孩子是2i+1；如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>i</mi><mo>+</mo><mn>1</mn><mo>&gt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2i+1&gt;n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68354em;vertical-align:-0.0391em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，则结点i无右孩子；</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>满二叉树：一棵深度为k，有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^k-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.932438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个结点的二叉树</p>
+</li>
+<li>
+<p>完全二叉树：深度为k，有n个结点的二叉树当且仅当每一个结点都与深度为k的满二叉树中编号一一对应。</p>
+<ul>
+<li>除最后一层外，每层都充满了结点，最下面一层结点都集中在该层的最左边。</li>
+<li>小于2的结点只可能在层次最大的两层上出现，如果某个结点没有左孩子，那么它一定没有右孩子，该结点为叶子结点。</li>
+</ul>
+</li>
+<li>
+<p>二叉树存储结构</p>
+<ol>
+<li>
+<p>顺序存储：按完全二叉树的结点层次编号，依次存放二叉树中的数据元素</p>
+<ul>
+<li>浪费空间，适合存满二叉树或完全二叉树</li>
+</ul>
+</li>
+<li>
+<p>链式存储</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> </span></span><br><span class="line"><span class="class">&#123;</span>   TElemType      data;    <span class="comment">//数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span>  *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></div></figure>
+</li>
+</ol>
+</li>
+<li>
+<p>二叉树的遍历</p>
+<ol>
+<li>前序遍历：递归</li>
+<li>层次遍历：队列实现</li>
+<li>中序遍历：</li>
+<li>后序遍历：</li>
+</ol>
+</li>
+<li>
+<p>二叉树的构建：已知前序+中序遍历或中序+后续或层次+中序可以推出唯一二叉树，已知前序+后序不可以。</p>
+</li>
+<li>
+<p>线索二叉树</p>
+<ol>
+<li>
+<p>线索：指向线性序列中的前驱、后继的指针</p>
+</li>
+<li>
+<p>若结点的左子树不空，线索指向左子树；若为空则指向前驱。</p>
+<p>若结点的右子树不空，线索指向右子树；若为空则指向后继。</p>
+</li>
+<li>
+<p>中序线索二叉树遍历</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrderTraverse_Thr</span><span class="params">(BiThrTree T, <span class="keyword">void</span> (*Visit)(TElemType e))</span> </span>&#123;</span><br><span class="line">    <span class="comment">// T指向头节点（头节点不存储数据），头节点的左链lchild指向根节点</span></span><br><span class="line">    <span class="comment">// 中序遍历二叉线索树T的非递归算法，对每个数据元素调用函数visit</span></span><br><span class="line">  	p = T-&gt;lchild;       <span class="comment">// p指向根结点</span></span><br><span class="line">  	<span class="keyword">while</span> (p != T) &#123;     <span class="comment">// 空树或遍历结束时，p==T</span></span><br><span class="line">    	<span class="keyword">while</span> (p-&gt;LTag == Link)  p = p-&gt;lchild; <span class="comment">// 链，第一个结点，即寻找当前根左子树的最左下</span></span><br><span class="line">       	<span class="built_in">Visit</span> (p-&gt;data);</span><br><span class="line">     	<span class="keyword">while</span> (p-&gt;RTag == Thread &amp;&amp; p-&gt;rchild != T) &#123; </span><br><span class="line">            <span class="comment">// p-&gt;rchild != T 代表不为最后一个元素</span></span><br><span class="line">            p = p-&gt;rchild;  </span><br><span class="line">            <span class="built_in">Visit</span>(p-&gt;data); </span><br><span class="line">        &#125;  <span class="comment">// 线索，后继结点</span></span><br><span class="line">     	p = p-&gt;rchild; <span class="comment">// p进至其右子树根</span></span><br><span class="line">    &#125;         </span><br><span class="line">&#125; <span class="comment">// InOrderTraverse_Thr</span></span><br></pre></td></tr></table></div></figure>
+</li>
+<li>
+<p>中序遍历建立中序线索二叉树</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InThreading</span><span class="params">(BiThrTree p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p) &#123;</span><br><span class="line">        <span class="built_in">InThreading</span>(p-&gt;lchild); <span class="comment">// 左子树线索化</span></span><br><span class="line">        <span class="keyword">if</span> (!p-&gt;lchild) &#123;		<span class="comment">// 前驱线索</span></span><br><span class="line">            p-&gt;LTag = Thread;</span><br><span class="line">            p-&gt;lchild = pre;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!pre-&gt;rchild) &#123;		<span class="comment">// 后继线索</span></span><br><span class="line">            pre-&gt;LTag = Thread;</span><br><span class="line">            pre-&gt;rchild = p;</span><br><span class="line">        &#125;</span><br><span class="line">        pre = p;				<span class="comment">// 保持pre指向p的前驱</span></span><br><span class="line">        <span class="built_in">InThreading</span>(p-&gt;rchild);·<span class="comment">// 右子树线索化</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+</li>
+</ol>
+</li>
+<li>
+<p>树和森林</p>
+<ol>
+<li>
+<p>双亲表示法</p>
+</li>
+<li>
+<p>孩子表示法（多重链表（同构、不同构）、孩子链表）</p>
+</li>
+<li>
+<p>孩子兄弟表示法（二叉树表示法）</p>
+<ol>
+<li>
+<p><strong>转换</strong></p>
+</li>
+<li>
+<p>树和森林的遍历：</p>
+<p>先根遍历：相当于转换为二叉树后前序遍历</p>
+<p>后根遍历：先当于转换为二叉树的中序遍历</p>
+<img src="/image/data_stru/image-20220605110607239.png" alt="image-20220605110607239" style="zoom:50%;" />
+</li>
+<li>
+<p>求树的深度</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">CSTreeDepth</span><span class="params">(CSTree T)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> depth = <span class="number">0</span>;</span><br><span class="line">	CSTree p;</span><br><span class="line">	<span class="keyword">if</span> (!T) <span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">	p = T-&gt;firstchild;</span><br><span class="line">    <span class="comment">// p不为空，则求以p为根的子树深度d（递归）</span></span><br><span class="line">    <span class="keyword">while</span>(p) &#123;			</span><br><span class="line">        d = <span class="built_in">CSTreeDepth</span>(p);</span><br><span class="line">        <span class="keyword">if</span> (d &gt; depth) depth = d;</span><br><span class="line">		p = p-&gt;nextsibling;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> depth + <span class="number">1</span>;	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>哈夫曼树</p>
+<ol>
+<li>构造</li>
+<li>应用：最佳判定树、哈夫曼编码</li>
+</ol>
+</li>
+</ol>
+
+        <h1 id="图"   >
+          <a href="#图" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#图"></a> 图</h1>
+      
+<ol>
+<li>
+<p>图的基本概念</p>
+<ol>
+<li>
+<p>图：由两个集合<strong>V(G)<strong>和</strong>VR(G)<strong>组成,记为</strong>G=(V,VR)</strong>，**V(G)**是顶点的非空有限集，**VR(G)**是边的有限集合，边是顶点的有序对或无序对</p>
+</li>
+<li>
+<p>有向图：由两个集合**V(G)<strong>和</strong>VR(G)**组成，**V(G)**是顶点的非空有限集，<strong>VR(G)<strong>是有向边（即弧）的有限集合，弧是顶点的有序对，记</strong>&lt;<strong>v,w</strong>&gt;</strong>，v为弧尾，w为弧头</p>
+</li>
+<li>
+<p>无向图：由两个集合**V(G)<strong>和</strong>VR(G)**组成，**V(G)**是顶点的非空有限集，**VR(G)**是边的有限集合，边是顶点的无序对，记作(v,w)或(w,v)，并且(v,w)=(w,v)</p>
+</li>
+<li>
+<p>有向完全图：n个顶点的有向图最大边数是n(n-1)</p>
+</li>
+<li>
+<p>无向完全图：n个顶点的无向图最大边数是n(n-1)/2</p>
+</li>
+<li>
+<p>权：与图的边或弧相关的数</p>
+</li>
+<li>
+<p>网：带权的图</p>
+</li>
+<li>
+<p>子图：如果图G(V,VR)和图G‘(V’,VR‘),满足：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>V</mi><mo mathvariant="normal">′</mo></msup><mo>⊆</mo><mi>V</mi><mspace width="0.5em"/><mi>V</mi><msup><mi>R</mi><mo mathvariant="normal">′</mo></msup><mo>⊆</mo><mi>V</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">V&#x27;\subseteq V\enspace VR&#x27;\subseteq VR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.887862em;vertical-align:-0.13597em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊆</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.887862em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.5em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⊆</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span>，则称G‘为G的子图</p>
+</li>
+<li>
+<p>邻接点：顶点v和顶点w之间存在一条边，则称v和w互为邻接点；边(v,w)和顶点v和w相关联</p>
+</li>
+<li>
+<p>顶点的度：无向图中，顶点的度为与每个顶点相连的边数；有向图中，顶点的度分成入度与出度：</p>
+<ul>
+<li>
+<p>入度：以该顶点为头的弧的数目</p>
+</li>
+<li>
+<p>出度：以该顶点为尾的弧的数目；</p>
+</li>
+</ul>
+</li>
+<li>
+<p>路径：若从顶点vi经过若干条边能到达vj，称顶点vi和vj是连通的，又称顶点vi到vj有路径。</p>
+</li>
+<li>
+<p>路径长度：沿路径边的数目或沿路径各边权值之和</p>
+</li>
+<li>
+<p>回路：第一个顶点和最后一个顶点相同的路径</p>
+</li>
+<li>
+<p>简单路径：序列中顶点不重复出现的路径</p>
+</li>
+<li>
+<p>简单回路：除了第一个顶点和最后一个顶点外，其余顶点不重复出现的回路</p>
+</li>
+<li>
+<p>连通：从顶点V到顶点W有一条路径，则说V和W是连通的</p>
+</li>
+<li>
+<p>连通图：图中任意两个顶点都是连通的图</p>
+</li>
+<li>
+<p>连通分量：非连通图的每一个连通部分</p>
+</li>
+<li>
+<p>强连通图：有向图中，如果对每一对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>V</mi><mi>j</mi></msub><mo>∈</mo><mi>V</mi><mo separator="true">,</mo><msub><mi>V</mi><mi>i</mi></msub><mi mathvariant="normal">≠</mi><msub><mi>V</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">V_i,V_j\in V,V_i\ne V_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">V_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">V_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>和从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">V_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">V_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>都存在路径，则为强连通图</p>
+</li>
+<li>
+<p>生成树：一个极小的连通子图，含有图中全部顶点，但只有足以构成一棵树的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>条边</p>
+</li>
+<li>
+<p>有向树：一个有向图中恰有一个顶点入度为0，其余顶点入度均为1</p>
+</li>
+</ol>
+</li>
+<li>
+<p>图的存储结构</p>
+<ol>
+<li>
+<p>邻接矩阵</p>
+</li>
+<li>
+<p>邻接表</p>
+<ol>
+<li>
+<p>弧结点</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Arcnode</span> &#123;</span>    </span><br><span class="line">    <span class="keyword">int</span>   adjvex; </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Arcnode</span>  *<span class="title">nextarc</span>;</span> </span><br><span class="line">&#125; ArcNode;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li>
+<p>顶点结点</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Vnode</span> &#123;</span>    </span><br><span class="line">    VertexType  data; </span><br><span class="line">    ArcNode  *firstarc;  </span><br><span class="line">&#125; VNode, AdjList[Max_Vertex_Num];</span><br></pre></td></tr></table></div></figure>
+</li>
+<li>
+<p>图的定义</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span>     </span><br><span class="line">    AdjList    vertices;         </span><br><span class="line">    <span class="keyword">int</span>    vexnum, arcnum;   <span class="comment">//顶点及弧的数目 </span></span><br><span class="line">&#125; ALGraph;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li>
+<p>无向图中，单链表中结点个数 = 边数 * 2</p>
+</li>
+<li>
+<p>无向图中，顶点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">V_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的度为第i个单链表中的结点数</p>
+<img src="/image/data_stru/image-20220605144519394.png" alt="image-20220605144519394" style="zoom:50%;" />
+</li>
+<li>
+<p>有向图中，顶点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">V_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的出度为第i个单链表中的结点数，顶点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">V_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的入度为整个单链表中邻接点域为i的结点个数</p>
+<ul>
+<li>找邻接点容易，若找逆邻接点则需要逆邻接表</li>
+</ul>
+<img src="/image/data_stru/image-20220605144500988.png" alt="image-20220605144500988" style="zoom:50%;" />
+</li>
+<li>
+<p>网的邻接表存储</p>
+<img src="/image/data_stru/image-20220605144650493.png" alt="image-20220605144650493" style="zoom:50%;" />
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>图的遍历</p>
+<ol>
+<li>
+<p>DFS 深度优先</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基于邻接表存储</span></span><br><span class="line"><span class="keyword">int</span> visited[MAX];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFSTraverse</span> <span class="params">(ALGraph G)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= G.vexnum; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (visited[i] == <span class="number">0</span>) <span class="built_in">DFS</span>(G, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(ALGraph G, <span class="keyword">int</span> v)</span>  </span>&#123;  </span><br><span class="line">    ArcNode* w;      </span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    cout&lt;&lt;v&lt;&lt;endl;  visited[v] = <span class="number">1</span>;</span><br><span class="line">    w=G.vertices[v].firstarc; </span><br><span class="line">    <span class="keyword">while</span>(w) &#123;</span><br><span class="line">        i = w-&gt;adjvex;    </span><br><span class="line">        <span class="keyword">if</span> (visited[i] == <span class="number">0</span>)  <span class="built_in">DFS</span>(G,i);</span><br><span class="line">        <span class="keyword">else</span>  w=w-&gt;nextarc;  </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li>
+<p>BFS 广度优先</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基于邻接表存储，队列实现</span></span><br><span class="line"><span class="keyword">int</span> visited[MAX];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFSTraverse</span> <span class="params">(ALGraph G)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= G.vexnum; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (visited[i] == <span class="number">0</span>) <span class="built_in">BFS</span>(G, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(ALGraph G, <span class="keyword">int</span> v)</span></span>&#123;  </span><br><span class="line">    <span class="comment">// 从顶点V出发遍历图</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 初始化队列</span></span><br><span class="line">    <span class="keyword">int</span> Q[MAX], f = <span class="number">0</span>, r = <span class="number">0</span>, x;     </span><br><span class="line">    ArcNode* w;</span><br><span class="line">    cout&lt;&lt;v&lt;&lt;endl;  </span><br><span class="line">    visited[v]=<span class="number">1</span>;</span><br><span class="line">    Q[r++]=v; </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 遍历（入队访问）</span></span><br><span class="line">    <span class="keyword">while</span>(f &lt; r)&#123;   </span><br><span class="line">        <span class="comment">// 队头出队</span></span><br><span class="line">        x=Q[f++];</span><br><span class="line">        <span class="comment">// 求x的邻接点w</span></span><br><span class="line">        w=G.vertices[x].firstarc; </span><br><span class="line">        <span class="keyword">while</span>(w)  &#123;     </span><br><span class="line">            x = w-&gt;adjvex;  </span><br><span class="line">            <span class="keyword">if</span>(visited[x] == <span class="number">0</span>)&#123;     </span><br><span class="line">                visited[x] = <span class="number">1</span>;</span><br><span class="line">                cout&lt;&lt;x&lt;&lt;endl;</span><br><span class="line">				Q[r++]=x;    </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 遍历所有x的邻接点</span></span><br><span class="line">            w = w-&gt;nextarc;  </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+</li>
+<li>
+<p>应用：求两个顶点间的路径（DFS、BFS），求两个顶点间的最短路径（BFS）</p>
+</li>
+</ol>
+</li>
+<li>
+<p>生成树（所有顶点均由边连接在一起，但不存在回路的图）</p>
+<ol>
+<li>深度优先和广度优先生成树（利用遍历经过的分支构成的生成树）</li>
+<li>生成树的特点
+<ol>
+<li>一个图可以有许多棵不同的生成树</li>
+<li>生成树顶点个数 = 图的顶点个数</li>
+<li>生成树是图的极小连通子图</li>
+<li>一个有n个顶点的连通图的生成树有n - 1条边</li>
+<li>生成树中任意两顶点的路径唯一</li>
+<li>生成树再加一条边必定形成回路，但具有n个顶点和n - 1条边的图不一定是生成树</li>
+</ol>
+</li>
+<li>构建最小生成树
+<ol>
+<li>Prim算法：不断加入顶点，使得加入的顶点与已有顶点构成的边中在已有顶点相邻的所有边中最小。</li>
+<li>Kruskal算法：在E中选取代价最小的边使得依附的顶点落在T中不同的连通分量上。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>拓扑排序</p>
+<ol>
+<li>AOV网：用顶点表示活动，用弧表示活动间优先关系的有向图称为顶点表示活动的网</li>
+<li>AOV网中不允许有回路，这意味着某项活动以自己为先决条件</li>
+<li>拓扑排序：把AOV网络中各顶点按照它们相互之间的优先关系排列成一个线性序列的过程</li>
+<li>拓扑排序方法：
+<ol>
+<li>在有向图中选一个没有前驱的顶点且输出之</li>
+<li>从图中删除该顶点和所有以它为尾的弧</li>
+<li>重复上述两步，直至全部顶点均已输出；或者当图中不存在无前驱的顶点为止</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>关键路径：拓扑排序求事件最早开始时间 + 逆拓扑排序求事件最迟开始时间</p>
+</li>
+<li>
+<p>最短路径</p>
+<ol>
+<li>
+<p>Dijkstra算法——某个源点到其余各顶点的最短路径</p>
+<ol>
+<li>
+<p>思想：</p>
+<ul>
+<li>
+<p>把顶点的集合V分成两组：S：{已求出最短路径的顶点}；T=V-S：{尚未确定最短路径的顶点}，保证:</p>
+<ul>
+<li>
+<p>每一个顶点对应一个距离值，S中顶点：从V0到此顶点的最短路径长度；T中顶点：从V0到此顶点的只包括S中顶点作中间顶点的最短路径长度</p>
+</li>
+<li>
+<p>S中各顶点的距离值≤T中各顶点的距离值</p>
+</li>
+</ul>
+</li>
+<li>
+<p>将T中顶点按<em>最短路径递增的次序</em>加入到S中，即每次从T中找出距离值最小的顶点加入到S中，直到S=V为止</p>
+</li>
+</ul>
+</li>
+<li>
+<p>算法步骤</p>
+<ol>
+<li>
+<p>初始时，令 S={V0},T={其余顶点}，T中顶点Vi对应的距离值</p>
+<ul>
+<li>
+<p>若存在&lt;V0,Vi&gt;，为&lt;V0,Vi&gt;弧上的权值</p>
+</li>
+<li>
+<p>若不存在&lt;V0,Vi&gt;，为∞</p>
+</li>
+</ul>
+</li>
+<li>
+<p>从T中选取一个其距离值为最小的顶点W，加入S，则S={V0, W}</p>
+</li>
+<li>
+<p>对T中其余顶点的距离值进行修改：若加进W作中间顶点，从V0到Vi的距离值比不加W的路径要短，则修改此距离值</p>
+</li>
+<li>
+<p>重复上述步骤，直到S中包含所有顶点，即S=V为止</p>
+</li>
+</ol>
+</li>
+<li>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Floyd算法——每一对顶点之间的最短路径</p>
+<figure class="highlight c++"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FLOYD</span><span class="params">(<span class="keyword">int</span> cost[][M], <span class="keyword">int</span> path[][M], <span class="keyword">int</span> length[][M], <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j, k;</span><br><span class="line">    <span class="comment">// 矩阵初始化</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            length[i][j] = cost[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j)    path[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (length[i][j] &lt; MAX)   path[i][j] = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span>  path[i][j] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">// 加入顶点k作为中间顶点，求i-&gt;j的最短路径</span></span><br><span class="line">    <span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; n; k++)</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">                <span class="keyword">if</span> (length[i][k] + length[k][j] &lt; length[i][j]) &#123;</span><br><span class="line">                    length[i][j] = length[i][k] + length[k][j];</span><br><span class="line">                    path[i][j] = path[k][j];</span><br><span class="line">                &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<p>​</p>
+</li>
+</ol>
+</li>
+</ol>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Johnson Shuangjian</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/06/02/Data_stru/">http://example.com/2022/06/02/Data_stru/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/CS/">CS</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/05/04/yuesefu/"><span class="paginator-prev__text">约瑟夫环问题</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97"><span class="toc-number">1.</span> <span class="toc-text">
+           栈和队列</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%B2"><span class="toc-number">2.</span> <span class="toc-text">
+           串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text">
+           数组和广义表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">4.</span> <span class="toc-text">
+           树和二叉树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE"><span class="toc-number">5.</span> <span class="toc-text">
+           图</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/userhead.png" alt="avatar"></div><p class="sidebar-ov-author__text">Johnson Kerbal</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/AFlyingSheep" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="mailto:Johnsonshuangjian@outlook.com" target="_blank" rel="noopener" data-popover="向我发送邮件" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open-text"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=398287312" target="_blank" rel="noopener" data-popover="向我发送QQ消息" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">20</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021~2022</span><span class="footer__icon"><i class="fab fa-codepen"></i></span><span>Johnson Shuangjian</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="100,100,100" opacity="0.6" count="99" zIndex="-1"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":-5,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
