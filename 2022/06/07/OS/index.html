@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="计算机专业课《操作系统》进行全面复习的笔记。主讲教师：杨志豪。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《操作系统》复习">
+<meta property="og:url" content="http://example.com/2022/06/07/OS/index.html">
+<meta property="og:site_name" content="AFlyingSheep&#39;s Blog">
+<meta property="og:description" content="计算机专业课《操作系统》进行全面复习的笔记。主讲教师：杨志豪。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607231532776.png">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607231735683.png">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607231910716.png">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607231938923.png">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607232320427.png">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607232620669.png">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607232756149.png">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607232946354.png">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607233215283.png">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607233156614.png">
+<meta property="og:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607233437726.png">
+<meta property="article:published_time" content="2022-06-07T15:06:08.000Z">
+<meta property="article:modified_time" content="2022-06-07T15:43:22.503Z">
+<meta property="article:author" content="Johnson Shuangjian">
+<meta property="article:tag" content="CS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/赵阳/AppData/Roaming/Typora/typora-user-images/image-20220607231532776.png"><title>《操作系统》复习 | AFlyingSheep's Blog</title><link ref="canonical" href="http://example.com/2022/06/07/OS/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"carbon","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="AFlyingSheep's Blog" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">AFlyingSheep's Blog</div><div class="header-banner-info__subtitle">Keep coding, keep thinking.</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">《操作系统》复习</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-06-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-06-07</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">1.4k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">7分</span></span></div></header><div class="post-body">
+        <h1 id="第六章-文件管理"   >
+          <a href="#第六章-文件管理" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#第六章-文件管理"></a> 第六章 文件管理</h1>
+      
+
+        <h2 id="文件及文件系统"   >
+          <a href="#文件及文件系统" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#文件及文件系统"></a> 文件及文件系统</h2>
+      
+<ol>
+<li>文件的三大特点：可保存、具有标识名、逻辑相关且有完整意义</li>
+<li>文件系统：OS中负责处理文件相关事宜的程序和数据结构。</li>
+<li>文件的结构
+<ol>
+<li>逻辑结构（用户的观点）：连续存储、独立实体</li>
+<li>物理结构（实现的观点）：驻存在存储介质上的文件结构，未必连续</li>
+</ol>
+</li>
+</ol>
+
+        <h2 id="逻辑结构"   >
+          <a href="#逻辑结构" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#逻辑结构"></a> 逻辑结构</h2>
+      
+<ol>
+<li>
+<p>文件逻辑结构的类型</p>
+<ol>
+<li>
+<p>有结构文件（记录文件）：由一个以上的记录类构成的文件。</p>
+<ul>
+<li>定长记录，所有记录长度相同，处理方便，但浪费空间</li>
+<li>不定长记录：记录长度不相同，节约空间</li>
+</ul>
+</li>
+<li>
+<p>无结构文件（流式文件）：无需多余的说明信息，长度以字节为单位。</p>
+<p>有结构文件：字节—&gt;记录—&gt;文件</p>
+<p>无结构文件：字节—&gt;文件</p>
+</li>
+</ol>
+</li>
+<li>
+<p>逻辑结构下的文件存取方法：</p>
+<ol>
+<li>顺序存取：严格按照文件信息单位排列顺序存取</li>
+<li>随机存取：每次操作必须确定存取的位置，对于流式文件或定长记录文件容易确定，不定长不好确定。</li>
+<li>按键存取：根据记录关键字的值存取，常用于记录式文件。</li>
+</ol>
+</li>
+</ol>
+
+        <h2 id="物理结构"   >
+          <a href="#物理结构" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#物理结构"></a> 物理结构</h2>
+      
+<ol>
+<li>
+<p>物理结构：文件在文件存储器中的存储方式</p>
+<ol>
+<li>
+<p>连续结构：文件的全部信息存放在外存的一片连续编号的物理块中，也称连续文件。</p>
+<ol>
+<li>
+<p>优点：简单，支持顺序、随机存取，速度快，磁盘寻道速度时间最少；</p>
+</li>
+<li>
+<p>缺点：不易动态增长，预留空间浪费；不利于文件插入删除；存在外部碎片问题。</p>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607231532776.png" alt="image-20220607231532776" style="zoom:50%;" />
+</li>
+</ol>
+</li>
+<li>
+<p>串联结构（链接结构）：存放文件信息的每一物理块中有一个指针，指向下一个物理块，这个指针的长度由物理设备的容量决定，通常放在该物理块的开头或结尾。</p>
+<ol>
+<li>
+<p>优点：提高磁盘空间利用率，不存在外部碎片问题；有利于文件插入删除和动态扩充；</p>
+</li>
+<li>
+<p>缺点：存取速度慢，不适合随机存取；指针占用空间；可靠性问题，如指针出错。</p>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607231735683.png" alt="image-20220607231735683" style="zoom:65%;" />
+</li>
+</ol>
+</li>
+<li>
+<p>索引结构：一个文件的信息存放在若干不连续物理块中，系统为每个文件建立一个专用数据结构－索引表，一个索引表就是磁盘块地址数组,其中第i个条目指向文件的第i块。</p>
+<ol>
+<li>
+<p>优点：保持链接结构优点，解决了缺点，能顺序和随机存取；</p>
+</li>
+<li>
+<p>缺点：索引表本身带来开销。</p>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607231910716.png" alt="image-20220607231910716" style="zoom:65%;" />
+</li>
+<li>
+<p>多级索引</p>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607231938923.png" alt="image-20220607231938923" style="zoom:65%;" />
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+        <h2 id="文件目录管理"   >
+          <a href="#文件目录管理" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#文件目录管理"></a> 文件目录管理</h2>
+      
+<ol>
+<li>
+<p>目录管理要求：按名存取；提高目录检索速度；文件共享；允许重名（树状结构）。</p>
+</li>
+<li>
+<p>目录项（文件控制块，FCB）：操作系统为管理文件而设置的数据结构，存放了为管理文件所需的所有有关信息。所有的目录项就构成了文件目录。</p>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607232320427.png" alt="image-20220607232320427" style="zoom:50%;" />
+</li>
+<li>
+<p>目录结构</p>
+<ol>
+<li>
+<p>单级目录结构</p>
+<p>缺点：查找速度慢、不允许重名、不便于文件共享</p>
+</li>
+<li>
+<p>二级目录：为每一个用户建立单独用户文件目录UFD</p>
+<ol>
+<li>
+<p>优点：简单，解决重名问题</p>
+</li>
+<li>
+<p>缺点：缺乏灵活性，不能反映现实世界多层次关系</p>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607232620669.png" alt="image-20220607232620669" style="zoom:50%;" />
+</li>
+</ol>
+</li>
+<li>
+<p>多级目录结构（树形目录结构）：由根目录和各级目录组成，为管理上的方便，除根目录外，其它各级目录均以文件的形式组成目录文件。</p>
+<p>根目录中的每个目录项可以对应一个目录文件，也可以对应一个数据文件，同样目录文件中的每个目录项可以对应一个目录文件。也可以对应一个数据文件。如此类推，就形成多级目录结构。</p>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607232756149.png" alt="image-20220607232756149" style="zoom:50%;" />
+</li>
+</ol>
+</li>
+</ol>
+
+        <h2 id="文件存储空间管理"   >
+          <a href="#文件存储空间管理" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#文件存储空间管理"></a> 文件存储空间管理</h2>
+      
+<ol>
+<li>
+<p>解决重要问题：如何为新创建文件分配存储空间。分配方式：连续分配、离散分配</p>
+</li>
+<li>
+<p>空闲表法：属于连续分配方式，每个文件分配一块连续的存储空间，外存的所有空闲区建立一张空闲表。</p>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607232946354.png" alt="image-20220607232946354" style="zoom:50%;" />
+</li>
+<li>
+<p>空闲链表法</p>
+<ol>
+<li>
+<p>空闲盘块链：每一个空闲物理块上都有一个指针，把所有的空闲块通过该指针链接起来，形成一个链表，文件系统只需记住该链表的首结点指针；分配：从链首摘下空闲块分配；删除：插入末尾</p>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607233215283.png" alt="image-20220607233215283" style="zoom:50%;" />
+</li>
+<li>
+<p>空闲盘区链：把所有的空闲盘区（每个盘区可包含多个盘块）链接起来。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>位示图法</p>
+<ul>
+<li>
+<p>适合于小磁盘，适合找连续的空间</p>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607233156614.png" alt="image-20220607233156614" style="zoom:65%;" />
+</li>
+</ul>
+</li>
+<li>
+<p>文件的存取控制</p>
+<ol>
+<li>
+<p>存取控制矩阵</p>
+<ul>
+<li>逻辑简单，实现困难，二维矩阵大且验证耗时，可以按行或列分解</li>
+</ul>
+<img src="C:\Users\赵阳\AppData\Roaming\Typora\typora-user-images\image-20220607233437726.png" alt="image-20220607233437726" style="zoom:50%;" />
+</li>
+<li>
+<p>存取控制表：把用户分成三类：文件主、同组用户和其它用户，每类用户的存取权限为可读、可写、可执行以及它们的组合；每个文件一张表存放在文件FCB中，列出所有用户对文件的访问权限。大部分系统采用。</p>
+</li>
+</ol>
+</li>
+</ol>
+
+        <h2 id="文件共享"   >
+          <a href="#文件共享" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#文件共享"></a> 文件共享</h2>
+      
+<ol>
+<li>外存共享（用户）
+<ol>
+<li>同名共享：通过权限表（ACL）实现</li>
+<li>不同名共享：通过符号连接计数（如不同名文件实际指向统一文件）</li>
+</ol>
+</li>
+<li>内存共享（进程）
+<ol>
+<li>共享内存中的文件FCB</li>
+<li>共享文件的读写指针</li>
+</ol>
+</li>
+</ol>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Johnson Shuangjian</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/06/07/OS/">http://example.com/2022/06/07/OS/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/CS/">CS</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/06/07/CC/"><span class="paginator-prev__text">[ 文章无标题 ]</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">
+           第六章 文件管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%8F%8A%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.</span> <span class="toc-text">
+           文件及文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">
+           逻辑结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.</span> <span class="toc-text">
+           物理结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">
+           文件目录管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">
+           文件存储空间管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB"><span class="toc-number">1.6.</span> <span class="toc-text">
+           文件共享</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/userhead.png" alt="avatar"></div><p class="sidebar-ov-author__text">Johnson Kerbal</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/AFlyingSheep" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="mailto:Johnsonshuangjian@outlook.com" target="_blank" rel="noopener" data-popover="向我发送邮件" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open-text"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=398287312" target="_blank" rel="noopener" data-popover="向我发送QQ消息" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021~2022</span><span class="footer__icon"><i class="fab fa-codepen"></i></span><span>Johnson Shuangjian</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="100,100,100" opacity="0.6" count="99" zIndex="-1"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":-5,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>

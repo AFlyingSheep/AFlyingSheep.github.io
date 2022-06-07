@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/04/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%BA%8C)/</loc>
+    
+    <lastmod>2022-06-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/04/05/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%B8%80)/</loc>
+    
+    <lastmod>2022-06-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/06/07/OS/</loc>
+    
+    <lastmod>2022-06-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/06/02/Data_stru/</loc>
+    
+    <lastmod>2022-06-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/04/25/xushuichi/</loc>
     
     <lastmod>2022-06-07</lastmod>
@@ -14,15 +50,6 @@
     <loc>http://example.com/2022/06/07/CC/</loc>
     
     <lastmod>2022-06-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/06/02/Data_stru/</loc>
-    
-    <lastmod>2022-06-06</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -57,24 +84,6 @@
   
   <url>
     <loc>http://example.com/2022/04/13/Latex_symbol/</loc>
-    
-    <lastmod>2022-04-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/04/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%BA%8C)/</loc>
-    
-    <lastmod>2022-04-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/04/05/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%B8%80)/</loc>
     
     <lastmod>2022-04-13</lastmod>
     
