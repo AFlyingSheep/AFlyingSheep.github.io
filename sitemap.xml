@@ -236,20 +236,6 @@
 
   
   <url>
-    <loc>http://example.com/tags/Paper-Reading/</loc>
-    <lastmod>2022-06-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/NLP/</loc>
-    <lastmod>2022-06-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/CS/</loc>
     <lastmod>2022-06-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -271,7 +257,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/Math/</loc>
+    <loc>http://example.com/tags/Paper-Reading/</loc>
     <lastmod>2022-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -285,7 +271,21 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/NLP/</loc>
+    <lastmod>2022-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/AI/</loc>
+    <lastmod>2022-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Math/</loc>
     <lastmod>2022-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -299,13 +299,6 @@
   </url>
   
 
-  
-  <url>
-    <loc>http://example.com/categories/NLP/</loc>
-    <lastmod>2022-06-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
   <url>
     <loc>http://example.com/categories/CS/</loc>
@@ -322,7 +315,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/Math/</loc>
+    <loc>http://example.com/categories/NLP/</loc>
     <lastmod>2022-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -337,6 +330,13 @@
   
   <url>
     <loc>http://example.com/categories/AI/</loc>
+    <lastmod>2022-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/Math/</loc>
     <lastmod>2022-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
