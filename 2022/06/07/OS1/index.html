@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="计算机专业课《操作系统》进行全面复习的笔记，包括第一~三章。主讲教师：杨志豪。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《操作系统》复习（二）">
+<meta property="og:url" content="http://example.com/2022/06/07/OS1/index.html">
+<meta property="og:site_name" content="AFlyingSheep&#39;s Blog">
+<meta property="og:description" content="计算机专业课《操作系统》进行全面复习的笔记，包括第一~三章。主讲教师：杨志豪。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/OS/image-20220610174529383.png">
+<meta property="og:image" content="http://example.com/image/OS/image-20220610174938219.png">
+<meta property="og:image" content="http://example.com/image/OS/image-20220610181108184.png">
+<meta property="og:image" content="http://example.com/image/OS/image-20220610185210097.png">
+<meta property="og:image" content="http://example.com/image/OS/image-20220610185623932.png">
+<meta property="og:image" content="http://example.com/image/OS/image-20220610190801483.png">
+<meta property="article:published_time" content="2022-06-07T15:06:07.000Z">
+<meta property="article:modified_time" content="2022-06-10T11:10:14.465Z">
+<meta property="article:author" content="Johnson Shuangjian">
+<meta property="article:tag" content="CS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/OS/image-20220610174529383.png"><title>《操作系统》复习（二） | AFlyingSheep's Blog</title><link ref="canonical" href="http://example.com/2022/06/07/OS1/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"carbon","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="AFlyingSheep's Blog" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">AFlyingSheep's Blog</div><div class="header-banner-info__subtitle">Keep coding, keep thinking.</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">《操作系统》复习（二）</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-06-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-06-10</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">2.7k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">14分</span></span></div></header><div class="post-body">
+        <h1 id="操作系统引论"   >
+          <a href="#操作系统引论" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#操作系统引论"></a> 操作系统引论</h1>
+      
+
+        <h2 id="操作系统的定义"   >
+          <a href="#操作系统的定义" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#操作系统的定义"></a> 操作系统的定义</h2>
+      
+<ol>
+<li>从资源管理的观点：操作系统是控制和管理计算机的软、硬件资源，合理组织计算机的工作流程，以方便用户的程序集合</li>
+<li>从用户的观点：操作系统是配置计算机硬件上的第一层软件，是对硬件系统的第一次扩充</li>
+<li>操作系统的目标：
+<ol>
+<li>有效性：提高系统资源利用率、提高系统吞吐量</li>
+<li>方便性：方便用户通过OS操纵计算机系统</li>
+<li>可扩充性：适应计算机硬件、体系结构以及应用的发展</li>
+<li>开放性：遵循世界标准规范</li>
+</ol>
+</li>
+<li>操作系统的作用
+<ol>
+<li>作为用户与计算机硬件系统之间的接口
+<ul>
+<li>用户可通过三种方式使用计算机：命令方式、系统调用方式、图形窗口方式</li>
+</ul>
+</li>
+<li>作为计算机系统资源的管理者
+<ul>
+<li>四类资源：处理机管理、存储器管理、I/O设备管理、文件管理</li>
+<li>处理机可执行的指令分为：特权指令（只能由操作系统使用）、非特权指令</li>
+<li>处理机状态划分为：管态、目态</li>
+<li>处理机状态保证了特权指令的正确使用，把OS与用户程序区分开来</li>
+</ul>
+</li>
+<li>实现了计算机资源的抽象
+<ul>
+<li>裸机上覆盖上一层I/O设备管理软件，隐藏I/O设备操作的细节</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>操作系统发展的主要动力：
+<ol>
+<li>不断提高计算机资源的利用率</li>
+<li>方便用户</li>
+<li>器件的不断更新迭代</li>
+<li>计算机体系结构的不断发展</li>
+</ol>
+</li>
+</ol>
+
+        <h2 id="操作系统的发展过程"   >
+          <a href="#操作系统的发展过程" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#操作系统的发展过程"></a> 操作系统的发展过程</h2>
+      
+<ol>
+<li>
+<p>无操作系统的计算机系统</p>
+<ol>
+<li>
+<p>人工操作方式：打孔纸带</p>
+<p>缺点：用户独占全机、CPU等待人工操作</p>
+</li>
+<li>
+<p>脱机输入输出：解决人机矛盾及CPU和I/O设备速度不匹配的矛盾。将装有用户程序和数据的纸带(或卡片)装入纸带输入机(或卡片机)，在一台外围机的控制下，把纸带(卡片)上的数据(程序)输入到磁带上。当CPU需要这些程序和数据时，再从磁带上将其高速地调入内存。</p>
+<p>减少了CPU空闲时间，提高了I/O速度。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>单道批处理系统</p>
+<ul>
+<li>把一批作业以脱机方式输入到磁带上，并在系统中配上监督程序(Monitor)，在它的控制下使这批作业能一个接一个地连续处理。</li>
+</ul>
+<img src="/image/OS/image-20220610174529383.png" alt="image-20220610174529383" style="zoom:50%;" />
+<ul>
+<li>特征：自动性、顺序性、单道性</li>
+</ul>
+</li>
+<li>
+<p>多道批处理系统</p>
+<ul>
+<li>
+<p>在该系统中，用户所提交的作业都先存放在外存上并排成一个队列，称为“后备队列”；然后，由作业调度程序按一定的算法从后备队列中选择若干个作业调入内存，使它们共享CPU和系统中的各种资源。</p>
+<img src="/image/OS/image-20220610174938219.png" alt="image-20220610174938219" style="zoom:40%;" />
+</li>
+<li>
+<p>优点：提高CPU利用率、提高内存和I/O设备利用率、增加系统吞吐量</p>
+</li>
+<li>
+<p>特点：资源利用率高、系统吞吐量大、平均周转时间长、五交互能力</p>
+</li>
+<li>
+<p>需要解决的问题：处理机管理问题、内存管理问题、I/O管理问题、文件管理问题、作业管理问题</p>
+</li>
+</ul>
+</li>
+<li>
+<p>分时系统</p>
+<ol>
+<li>概念
+<ol>
+<li>分时：CPU时间分段处理</li>
+<li>时间片：CPU的时间段</li>
+<li>响应时间：从终端发出请求到系统给予回答所经历的时间</li>
+</ol>
+</li>
+<li>分时系统的产生：分时系统(Time Sharing System)与多道批处理系统之间有着截然不同的性能差别，它能很好地将一台计算机提供给多个用户同时使用，提高计算机的利用率。用户的需求具体表现在以下几个方面：
+<ol>
+<li>人机交互</li>
+<li>共享主机</li>
+<li>便于用户上机</li>
+</ol>
+</li>
+<li>分时系统实现中的关键问题
+<ol>
+<li>及时接收：配备多路卡，用于主机同时接受各用户从终端输入的数据。配置缓冲区缓存用户键入指令</li>
+<li>及时处理：人机交互关键，使用户键入命令后能及时控制自己作业运行。所以各个用户作业都必须在内存中。</li>
+</ol>
+</li>
+<li>分时系统特征：多路性、独立性、及时性、交互性</li>
+</ol>
+</li>
+<li>
+<p>实时系统</p>
+<p>实时系统是指系统能及时(或即时)响应外部事件的请求，在规定的时间内完成对该事件的处理，并控制所有实时任务协调一致地运行。</p>
+<ol>
+<li>
+<p>实时任务</p>
+<ol>
+<li>按任务执行时是否呈现周期性来划分：周期性实时任务、非周期性实时任务</li>
+<li>根据对截止时间的要求来划分：硬实时任务、软实时任务</li>
+</ol>
+</li>
+<li>
+<p>实时系统与分时系统特征比较</p>
+<ol>
+<li>多路性：实时控制系统的多路性则主要表现在<strong>系统周期性地对多路现场信息进行采集，以及对多个对象或多个执行机构进行控制</strong>。而分时系统中的多路性则<strong>与用户情况有关</strong>，时多时少。</li>
+<li>独立性</li>
+<li>交互性：实时信息处理系统虽然也具有交互性，但这里人与系统的交互仅限于访问系统中某些特定的专用服务程序。它不像分时系统那样能向终端用户提供数据处理和资源共享等服务</li>
+<li>及时性</li>
+<li>可靠性：实时系统要求较高</li>
+</ol>
+<img src="/image/OS/image-20220610181108184.png" alt="image-20220610181108184" style="zoom:50%;" />
+</li>
+</ol>
+</li>
+</ol>
+
+        <h2 id="操作系统的基本特性"   >
+          <a href="#操作系统的基本特性" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#操作系统的基本特性"></a> 操作系统的基本特性</h2>
+      
+<p>并发性、共享性、虚拟性、异步性。并发和共享是操作系统两个最基本的特征。</p>
+<ol>
+<li>并发性
+<ol>
+<li>并行性是指两个或多个事件在同一时刻发生；而并发性是指两个或多个事件在同一时间间隔内发生。</li>
+<li>多道程序环境下，并发性指在一段时间内，宏观上多个程序同时执行，但微观上每一时刻只有一个程序执行</li>
+<li>进程：是指在系统中能独立运行并作为资源分配的基本单位。引入进程的目的：使多个程序能够并发执行</li>
+<li>线程：在一个进程中可以包含若干个线程，可以利用进程拥有的资源。</li>
+<li>OS中，将进程作为资源分配的基本单位，将线程作为独立运行、调度的基本单位。</li>
+</ol>
+</li>
+<li>共享性
+<ol>
+<li>互斥共享方式：一段时间只允许一个进程（线程）访问资源，如打印机。</li>
+<li>同时访问方式：进程可以交替对该资源进行访问，如磁盘设备。</li>
+</ol>
+</li>
+<li>虚拟性
+<ol>
+<li>时间复用技术
+<ol>
+<li>虚拟处理机技术：利用多道程序设计技术，为每道程序建立一个进程，多道程序并发执行，以此分时使用一台处理机。</li>
+<li>虚拟设备技术：将一台I/O设备虚拟为多台逻辑上的I/O设备，允许每个用户占用一台逻辑上的I/O设备。</li>
+</ol>
+</li>
+<li>空分复用技术：将一个频率范围非常宽的信道，划分成多个频率范围较窄的信道，其中的任何一个频带都只供一对用户通话。在计算机中也使用了空分复用技术来<strong>提高存储空间的利用率</strong>。
+<ol>
+<li>虚拟磁盘技术：一台磁盘虚拟为多台虚拟磁盘</li>
+<li>虚拟存储器技术：空分复用可以利用存储器的空闲空间来存放其它的程序，以提高内存的利用率。虚拟存储技术本质上是内存分时使用，通过时分复用方式，在远小于程序的内存空间中运行。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>异步性：在单处理机环境下，由于系统中只有一台处理机，因而每次只允许一个进程执行，其余进程只能等待。由于资源等因素的限制，使进程的执行通常都不是“一气呵成”，而是以“停停走走”的方式运行。</li>
+</ol>
+
+        <h2 id="操作系统的主要功能"   >
+          <a href="#操作系统的主要功能" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#操作系统的主要功能"></a> 操作系统的主要功能</h2>
+      
+<ol>
+<li>处理机管理功能：进程控制、进程同步（互斥、同步）、进程通信、进程与作业调度</li>
+<li>存储器管理功能：内存分配、内存保护、地址映射、内存扩充（虚拟技术）</li>
+<li>设备管理功能：缓冲管理、设备分配、设备处理、I/O控制、磁盘调度</li>
+<li>文件管理：文件存储空间的管理、目录管理、文件读写管理和保护</li>
+<li>操作系统与用户之间的接口：命令接口（联机命令接口、脱机命令接口、图形用户界面）、程序接口（也称系统调用）</li>
+</ol>
+
+        <h2 id="操作系统设计"   >
+          <a href="#操作系统设计" class="heading-link"><i class="fas fa-link"></i></a><a class="markdownIt-Anchor" href="#操作系统设计"></a> 操作系统设计</h2>
+      
+<ol>
+<li>
+<p>传统操作系统结构</p>
+<ol>
+<li>
+<p>无结构操作系统</p>
+</li>
+<li>
+<p>模块化结构OS：将OS按其功能精心地划分为若干个具有一定独立性和大小的模块；每个模块具有某方面的管理功能。仔细地规定好各模块间的接口，使各模块之间能通过该接口实现交互；进一步将各模块细分为若干个具有一定功能的子模块。</p>
+<p>优点：提高OS设计的正确性、可理解性和可维护性；增强OS适应性、加速OS开发过程</p>
+<p>缺点：模块间接口难满足实际需求；开发无序。</p>
+<img src="/image/OS/image-20220610185210097.png" alt="image-20220610185210097" style="zoom:50%;" />
+</li>
+<li>
+<p>分层式结构OS：为了将模块-接口法中“决定顺序”的无序性变为有序性，引入了有序分层法。</p>
+<p>在目标系统An和裸机系统A0之间铺设若干层次软件，最终能在A0上运行。常采用自底向上法铺设。</p>
+<p>优点：易证明正确性、易扩充和维护；缺点：系统效率降低。</p>
+<img src="/image/OS/image-20220610185623932.png" alt="image-20220610185623932" style="zoom:50%;" />
+</li>
+</ol>
+</li>
+<li>
+<p>客户/服务器模式（C/S模式）</p>
+<ol>
+<li>组成：客户机（在一个LAN网络上连接多台网络工作站）、服务器（规模较大的机器）、网络系统（用于连接所有客户机和服务器）</li>
+<li>C/S模式优点：数据的分布处理和存储；便于集中管理；灵活性和可扩充性；易于改编应用软件</li>
+</ol>
+</li>
+<li>
+<p>面向对象的程序设计</p>
+</li>
+<li>
+<p>微内核OS结构</p>
+<ol>
+<li>足够小的内核：微内核并非是一个完整的OS，而只是操作系统中最基本的部分，它通常用于：① 实现与硬件紧密相关的处理；② 实现一些较基本的功能；③ 负责客户和服务器之间的通信。它们只是为构建通用OS提供一个重要基础，这样就可以确保把操作系统内核做得很小。</li>
+<li>基于客户/服务器模式</li>
+<li>应用机制与策略分离原理</li>
+<li>采用面向对象技术</li>
+</ol>
+<p>微内核的基本功能：进程管理、低级存储器管理、中断和陷入处理</p>
+<img src="/image/OS/image-20220610190801483.png" alt="image-20220610190801483" style="zoom:50%;" />
+</li>
+</ol>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">Johnson Shuangjian</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/06/07/OS1/">http://example.com/2022/06/07/OS1/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/CS/">CS</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/06/07/OS/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">《操作系统》复习（二）</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/06/07/CC/"><span class="paginator-prev__text">《计算机组成原理》复习</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%BC%95%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">
+           操作系统引论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">
+           操作系统的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">
+           操作系统的发展过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7"><span class="toc-number">1.3.</span> <span class="toc-text">
+           操作系统的基本特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="toc-number">1.4.</span> <span class="toc-text">
+           操作系统的主要功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.5.</span> <span class="toc-text">
+           操作系统设计</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/userhead.png" alt="avatar"></div><p class="sidebar-ov-author__text">Johnson Kerbal</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/AFlyingSheep" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="mailto:Johnsonshuangjian@outlook.com" target="_blank" rel="noopener" data-popover="向我发送邮件" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open-text"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=398287312" target="_blank" rel="noopener" data-popover="向我发送QQ消息" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">23</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021~2022</span><span class="footer__icon"><i class="fab fa-codepen"></i></span><span>Johnson Shuangjian</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="100,100,100" opacity="0.6" count="99" zIndex="-1"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":-5,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
