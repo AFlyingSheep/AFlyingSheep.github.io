@@ -3,11 +3,11 @@
   <title>AFlyingSheep&#39;s Blog</title>
   
   <subtitle>Keep coding, keep thinking.</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://aflyingsheep.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="http://aflyingsheep.github.io/"/>
   <updated>2022-06-13T14:55:08.996Z</updated>
-  <id>http://example.com/</id>
+  <id>http://aflyingsheep.github.io/</id>
   
   <author>
     <name>Johnson Shuangjian</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>《操作系统》复习（二）</title>
-    <link href="http://example.com/2022/06/07/OS/"/>
-    <id>http://example.com/2022/06/07/OS/</id>
+    <link href="http://aflyingsheep.github.io/2022/06/07/OS/"/>
+    <id>http://aflyingsheep.github.io/2022/06/07/OS/</id>
     <published>2022-06-07T15:06:08.000Z</published>
     <updated>2022-06-13T14:55:08.996Z</updated>
     
@@ -30,17 +30,17 @@
     
     
     
-    <category term="CS" scheme="http://example.com/categories/CS/"/>
+    <category term="CS" scheme="http://aflyingsheep.github.io/categories/CS/"/>
     
     
-    <category term="CS" scheme="http://example.com/tags/CS/"/>
+    <category term="CS" scheme="http://aflyingsheep.github.io/tags/CS/"/>
     
   </entry>
   
   <entry>
     <title>《操作系统》复习（一）</title>
-    <link href="http://example.com/2022/06/07/OS1/"/>
-    <id>http://example.com/2022/06/07/OS1/</id>
+    <link href="http://aflyingsheep.github.io/2022/06/07/OS1/"/>
+    <id>http://aflyingsheep.github.io/2022/06/07/OS1/</id>
     <published>2022-06-07T15:06:07.000Z</published>
     <updated>2022-06-13T13:00:08.367Z</updated>
     
@@ -51,17 +51,17 @@
     
     
     
-    <category term="CS" scheme="http://example.com/categories/CS/"/>
+    <category term="CS" scheme="http://aflyingsheep.github.io/categories/CS/"/>
     
     
-    <category term="CS" scheme="http://example.com/tags/CS/"/>
+    <category term="CS" scheme="http://aflyingsheep.github.io/tags/CS/"/>
     
   </entry>
   
   <entry>
     <title>《计算机组成原理》复习</title>
-    <link href="http://example.com/2022/06/07/CC/"/>
-    <id>http://example.com/2022/06/07/CC/</id>
+    <link href="http://aflyingsheep.github.io/2022/06/07/CC/"/>
+    <id>http://aflyingsheep.github.io/2022/06/07/CC/</id>
     <published>2022-06-07T13:05:13.000Z</published>
     <updated>2022-06-10T04:10:47.343Z</updated>
     
@@ -72,17 +72,17 @@
     
     
     
-    <category term="CS" scheme="http://example.com/categories/CS/"/>
+    <category term="CS" scheme="http://aflyingsheep.github.io/categories/CS/"/>
     
     
-    <category term="CS" scheme="http://example.com/tags/CS/"/>
+    <category term="CS" scheme="http://aflyingsheep.github.io/tags/CS/"/>
     
   </entry>
   
   <entry>
     <title>《数据结构与算法》复习</title>
-    <link href="http://example.com/2022/06/02/Data_stru/"/>
-    <id>http://example.com/2022/06/02/Data_stru/</id>
+    <link href="http://aflyingsheep.github.io/2022/06/02/Data_stru/"/>
+    <id>http://aflyingsheep.github.io/2022/06/02/Data_stru/</id>
     <published>2022-06-02T07:59:58.000Z</published>
     <updated>2022-06-07T15:42:04.162Z</updated>
     
@@ -93,17 +93,17 @@
     
     
     
-    <category term="CS" scheme="http://example.com/categories/CS/"/>
+    <category term="CS" scheme="http://aflyingsheep.github.io/categories/CS/"/>
     
     
-    <category term="CS" scheme="http://example.com/tags/CS/"/>
+    <category term="CS" scheme="http://aflyingsheep.github.io/tags/CS/"/>
     
   </entry>
   
   <entry>
     <title>约瑟夫环问题</title>
-    <link href="http://example.com/2022/05/04/yuesefu/"/>
-    <id>http://example.com/2022/05/04/yuesefu/</id>
+    <link href="http://aflyingsheep.github.io/2022/05/04/yuesefu/"/>
+    <id>http://aflyingsheep.github.io/2022/05/04/yuesefu/</id>
     <published>2022-05-04T02:59:50.000Z</published>
     <updated>2022-05-04T03:08:03.818Z</updated>
     
@@ -114,17 +114,17 @@
     
     
     
-    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
+    <category term="Algorithm" scheme="http://aflyingsheep.github.io/categories/Algorithm/"/>
     
     
-    <category term="Algorithm" scheme="http://example.com/tags/Algorithm/"/>
+    <category term="Algorithm" scheme="http://aflyingsheep.github.io/tags/Algorithm/"/>
     
   </entry>
   
   <entry>
     <title>蓄水池抽样</title>
-    <link href="http://example.com/2022/04/25/xushuichi/"/>
-    <id>http://example.com/2022/04/25/xushuichi/</id>
+    <link href="http://aflyingsheep.github.io/2022/04/25/xushuichi/"/>
+    <id>http://aflyingsheep.github.io/2022/04/25/xushuichi/</id>
     <published>2022-04-25T12:33:02.000Z</published>
     <updated>2022-06-07T14:58:55.463Z</updated>
     
@@ -135,17 +135,17 @@
     
     
     
-    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
+    <category term="Algorithm" scheme="http://aflyingsheep.github.io/categories/Algorithm/"/>
     
     
-    <category term="Algorithm" scheme="http://example.com/tags/Algorithm/"/>
+    <category term="Algorithm" scheme="http://aflyingsheep.github.io/tags/Algorithm/"/>
     
   </entry>
   
   <entry>
     <title>《信息安全》</title>
-    <link href="http://example.com/2022/04/19/xinxianquan/"/>
-    <id>http://example.com/2022/04/19/xinxianquan/</id>
+    <link href="http://aflyingsheep.github.io/2022/04/19/xinxianquan/"/>
+    <id>http://aflyingsheep.github.io/2022/04/19/xinxianquan/</id>
     <published>2022-04-19T14:36:44.000Z</published>
     <updated>2022-05-10T11:02:42.352Z</updated>
     
@@ -156,17 +156,17 @@
     
     
     
-    <category term="CS" scheme="http://example.com/categories/CS/"/>
+    <category term="CS" scheme="http://aflyingsheep.github.io/categories/CS/"/>
     
     
-    <category term="CS" scheme="http://example.com/tags/CS/"/>
+    <category term="CS" scheme="http://aflyingsheep.github.io/tags/CS/"/>
     
   </entry>
   
   <entry>
     <title>LaTex符号查阅手册</title>
-    <link href="http://example.com/2022/04/13/Latex_symbol/"/>
-    <id>http://example.com/2022/04/13/Latex_symbol/</id>
+    <link href="http://aflyingsheep.github.io/2022/04/13/Latex_symbol/"/>
+    <id>http://aflyingsheep.github.io/2022/04/13/Latex_symbol/</id>
     <published>2022-04-13T11:07:50.000Z</published>
     <updated>2022-04-13T11:25:05.522Z</updated>
     
@@ -177,17 +177,17 @@
     
     
     
-    <category term="Math" scheme="http://example.com/categories/Math/"/>
+    <category term="Math" scheme="http://aflyingsheep.github.io/categories/Math/"/>
     
     
-    <category term="Math" scheme="http://example.com/tags/Math/"/>
+    <category term="Math" scheme="http://aflyingsheep.github.io/tags/Math/"/>
     
   </entry>
   
   <entry>
     <title>线性代数知识复习(二)</title>
-    <link href="http://example.com/2022/04/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%BA%8C)/"/>
-    <id>http://example.com/2022/04/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%BA%8C)/</id>
+    <link href="http://aflyingsheep.github.io/2022/04/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%BA%8C)/"/>
+    <id>http://aflyingsheep.github.io/2022/04/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%BA%8C)/</id>
     <published>2022-04-08T14:28:24.000Z</published>
     <updated>2022-06-07T15:44:13.934Z</updated>
     
@@ -198,17 +198,17 @@
     
     
     
-    <category term="Math" scheme="http://example.com/categories/Math/"/>
+    <category term="Math" scheme="http://aflyingsheep.github.io/categories/Math/"/>
     
     
-    <category term="Math" scheme="http://example.com/tags/Math/"/>
+    <category term="Math" scheme="http://aflyingsheep.github.io/tags/Math/"/>
     
   </entry>
   
   <entry>
     <title>线性代数知识复习(一)</title>
-    <link href="http://example.com/2022/04/05/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%B8%80)/"/>
-    <id>http://example.com/2022/04/05/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%B8%80)/</id>
+    <link href="http://aflyingsheep.github.io/2022/04/05/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%B8%80)/"/>
+    <id>http://aflyingsheep.github.io/2022/04/05/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0(%E4%B8%80)/</id>
     <published>2022-04-05T15:16:20.000Z</published>
     <updated>2022-06-07T15:44:00.404Z</updated>
     
@@ -219,17 +219,17 @@
     
     
     
-    <category term="Math" scheme="http://example.com/categories/Math/"/>
+    <category term="Math" scheme="http://aflyingsheep.github.io/categories/Math/"/>
     
     
-    <category term="Math" scheme="http://example.com/tags/Math/"/>
+    <category term="Math" scheme="http://aflyingsheep.github.io/tags/Math/"/>
     
   </entry>
   
   <entry>
     <title>实体抽取——BiLSTM-CRF模型</title>
-    <link href="http://example.com/2022/03/26/BiLSTM-CRF/"/>
-    <id>http://example.com/2022/03/26/BiLSTM-CRF/</id>
+    <link href="http://aflyingsheep.github.io/2022/03/26/BiLSTM-CRF/"/>
+    <id>http://aflyingsheep.github.io/2022/03/26/BiLSTM-CRF/</id>
     <published>2022-03-26T03:53:08.000Z</published>
     <updated>2022-03-26T03:55:02.551Z</updated>
     
@@ -240,17 +240,17 @@
     
     
     
-    <category term="NLP" scheme="http://example.com/categories/NLP/"/>
+    <category term="NLP" scheme="http://aflyingsheep.github.io/categories/NLP/"/>
     
     
-    <category term="NLP" scheme="http://example.com/tags/NLP/"/>
+    <category term="NLP" scheme="http://aflyingsheep.github.io/tags/NLP/"/>
     
   </entry>
   
   <entry>
     <title>概率论-先验概率与后验概率等</title>
-    <link href="http://example.com/2022/03/26/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
-    <id>http://example.com/2022/03/26/%E6%A6%82%E7%8E%87%E8%AE%BA/</id>
+    <link href="http://aflyingsheep.github.io/2022/03/26/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+    <id>http://aflyingsheep.github.io/2022/03/26/%E6%A6%82%E7%8E%87%E8%AE%BA/</id>
     <published>2022-03-26T02:40:08.000Z</published>
     <updated>2022-04-05T15:25:01.239Z</updated>
     
@@ -261,17 +261,17 @@
     
     
     
-    <category term="Math" scheme="http://example.com/categories/Math/"/>
+    <category term="Math" scheme="http://aflyingsheep.github.io/categories/Math/"/>
     
     
-    <category term="Math" scheme="http://example.com/tags/Math/"/>
+    <category term="Math" scheme="http://aflyingsheep.github.io/tags/Math/"/>
     
   </entry>
   
   <entry>
     <title>BERT — Learning From Paper</title>
-    <link href="http://example.com/2022/03/16/BERT/"/>
-    <id>http://example.com/2022/03/16/BERT/</id>
+    <link href="http://aflyingsheep.github.io/2022/03/16/BERT/"/>
+    <id>http://aflyingsheep.github.io/2022/03/16/BERT/</id>
     <published>2022-03-16T14:58:08.000Z</published>
     <updated>2022-03-16T15:07:14.775Z</updated>
     
@@ -282,17 +282,17 @@
     
     
     
-    <category term="NLP" scheme="http://example.com/categories/NLP/"/>
+    <category term="NLP" scheme="http://aflyingsheep.github.io/categories/NLP/"/>
     
     
-    <category term="Paper Reading" scheme="http://example.com/tags/Paper-Reading/"/>
+    <category term="Paper Reading" scheme="http://aflyingsheep.github.io/tags/Paper-Reading/"/>
     
   </entry>
   
   <entry>
     <title>BERT &amp; Its Family — Hongyi Li</title>
-    <link href="http://example.com/2022/03/16/BERT_and_its_family/"/>
-    <id>http://example.com/2022/03/16/BERT_and_its_family/</id>
+    <link href="http://aflyingsheep.github.io/2022/03/16/BERT_and_its_family/"/>
+    <id>http://aflyingsheep.github.io/2022/03/16/BERT_and_its_family/</id>
     <published>2022-03-16T10:24:53.000Z</published>
     <updated>2022-04-22T14:20:58.811Z</updated>
     
@@ -303,17 +303,17 @@
     
     
     
-    <category term="NLP" scheme="http://example.com/categories/NLP/"/>
+    <category term="NLP" scheme="http://aflyingsheep.github.io/categories/NLP/"/>
     
     
-    <category term="Paper Reading" scheme="http://example.com/tags/Paper-Reading/"/>
+    <category term="Paper Reading" scheme="http://aflyingsheep.github.io/tags/Paper-Reading/"/>
     
   </entry>
   
   <entry>
     <title>Attention is All You Need</title>
-    <link href="http://example.com/2022/03/15/attention_is_all_you_need/"/>
-    <id>http://example.com/2022/03/15/attention_is_all_you_need/</id>
+    <link href="http://aflyingsheep.github.io/2022/03/15/attention_is_all_you_need/"/>
+    <id>http://aflyingsheep.github.io/2022/03/15/attention_is_all_you_need/</id>
     <published>2022-03-15T12:36:03.000Z</published>
     <updated>2022-03-15T12:47:07.244Z</updated>
     
@@ -324,17 +324,17 @@
     
     
     
-    <category term="NLP" scheme="http://example.com/categories/NLP/"/>
+    <category term="NLP" scheme="http://aflyingsheep.github.io/categories/NLP/"/>
     
     
-    <category term="Paper Reading" scheme="http://example.com/tags/Paper-Reading/"/>
+    <category term="Paper Reading" scheme="http://aflyingsheep.github.io/tags/Paper-Reading/"/>
     
   </entry>
   
   <entry>
     <title>ResNet-残差网络</title>
-    <link href="http://example.com/2022/03/15/ResNet/"/>
-    <id>http://example.com/2022/03/15/ResNet/</id>
+    <link href="http://aflyingsheep.github.io/2022/03/15/ResNet/"/>
+    <id>http://aflyingsheep.github.io/2022/03/15/ResNet/</id>
     <published>2022-03-15T11:42:02.000Z</published>
     <updated>2022-03-15T12:47:22.816Z</updated>
     
@@ -345,17 +345,17 @@
     
     
     
-    <category term="AI" scheme="http://example.com/categories/AI/"/>
+    <category term="AI" scheme="http://aflyingsheep.github.io/categories/AI/"/>
     
     
-    <category term="AI" scheme="http://example.com/tags/AI/"/>
+    <category term="AI" scheme="http://aflyingsheep.github.io/tags/AI/"/>
     
   </entry>
   
   <entry>
     <title>论文翻译——基于蜂窝信令数据的智能轨迹推断</title>
-    <link href="http://example.com/2022/03/12/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91-%E4%BF%A1%E4%BB%A4/"/>
-    <id>http://example.com/2022/03/12/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91-%E4%BF%A1%E4%BB%A4/</id>
+    <link href="http://aflyingsheep.github.io/2022/03/12/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91-%E4%BF%A1%E4%BB%A4/"/>
+    <id>http://aflyingsheep.github.io/2022/03/12/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91-%E4%BF%A1%E4%BB%A4/</id>
     <published>2022-03-12T14:33:03.000Z</published>
     <updated>2022-03-12T14:52:09.371Z</updated>
     
@@ -366,17 +366,17 @@
     
     
     
-    <category term="Translate" scheme="http://example.com/categories/Translate/"/>
+    <category term="Translate" scheme="http://aflyingsheep.github.io/categories/Translate/"/>
     
     
-    <category term="Translate" scheme="http://example.com/tags/Translate/"/>
+    <category term="Translate" scheme="http://aflyingsheep.github.io/tags/Translate/"/>
     
   </entry>
   
   <entry>
     <title>数据预处理与特征工程</title>
-    <link href="http://example.com/2022/02/09/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
-    <id>http://example.com/2022/02/09/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/</id>
+    <link href="http://aflyingsheep.github.io/2022/02/09/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"/>
+    <id>http://aflyingsheep.github.io/2022/02/09/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/</id>
     <published>2022-02-09T07:37:02.000Z</published>
     <updated>2022-02-14T09:29:59.658Z</updated>
     
@@ -387,17 +387,17 @@
     
     
     
-    <category term="AI" scheme="http://example.com/categories/AI/"/>
+    <category term="AI" scheme="http://aflyingsheep.github.io/categories/AI/"/>
     
     
-    <category term="AI" scheme="http://example.com/tags/AI/"/>
+    <category term="AI" scheme="http://aflyingsheep.github.io/tags/AI/"/>
     
   </entry>
   
   <entry>
     <title>C#中调用Java的类与方法</title>
-    <link href="http://example.com/2022/01/22/c-java/"/>
-    <id>http://example.com/2022/01/22/c-java/</id>
+    <link href="http://aflyingsheep.github.io/2022/01/22/c-java/"/>
+    <id>http://aflyingsheep.github.io/2022/01/22/c-java/</id>
     <published>2022-01-22T07:50:05.000Z</published>
     <updated>2022-01-22T07:58:12.677Z</updated>
     
@@ -408,17 +408,17 @@
     
     
     
-    <category term="Other tools" scheme="http://example.com/categories/Other-tools/"/>
+    <category term="Other tools" scheme="http://aflyingsheep.github.io/categories/Other-tools/"/>
     
     
-    <category term="Tools" scheme="http://example.com/tags/Tools/"/>
+    <category term="Tools" scheme="http://aflyingsheep.github.io/tags/Tools/"/>
     
   </entry>
   
   <entry>
     <title>LIS&amp;&amp;LCS以及相互转化问题</title>
-    <link href="http://example.com/2022/01/21/LIS-and-LCS/"/>
-    <id>http://example.com/2022/01/21/LIS-and-LCS/</id>
+    <link href="http://aflyingsheep.github.io/2022/01/21/LIS-and-LCS/"/>
+    <id>http://aflyingsheep.github.io/2022/01/21/LIS-and-LCS/</id>
     <published>2022-01-21T11:10:02.000Z</published>
     <updated>2022-01-21T11:15:11.994Z</updated>
     
@@ -429,12 +429,12 @@
     
     
     
-    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
+    <category term="Algorithm" scheme="http://aflyingsheep.github.io/categories/Algorithm/"/>
     
     
-    <category term="Java" scheme="http://example.com/tags/Java/"/>
+    <category term="Java" scheme="http://aflyingsheep.github.io/tags/Java/"/>
     
-    <category term="Algorithm" scheme="http://example.com/tags/Algorithm/"/>
+    <category term="Algorithm" scheme="http://aflyingsheep.github.io/tags/Algorithm/"/>
     
   </entry>
   
