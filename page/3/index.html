@@ -1,38 +1,424 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="欢迎来到我的博客！">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>AFlyingSheep's Blog - Keep coding, keep thinking.</title><meta name="author" content="Johnson Shuangjian"><meta name="copyright" content="Johnson Shuangjian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="小阳的博客，记录学习、娱乐与日常！">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AFlyingSheep&#39;s Blog">
 <meta property="og:url" content="http://aflyingsheep.github.io/page/3/index.html">
 <meta property="og:site_name" content="AFlyingSheep&#39;s Blog">
-<meta property="og:description" content="欢迎来到我的博客！">
+<meta property="og:description" content="小阳的博客，记录学习、娱乐与日常！">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://aflyingsheep.github.io/img/userhead.png">
 <meta property="article:author" content="Johnson Shuangjian">
-<meta name="twitter:card" content="summary"><title>AFlyingSheep's Blog</title><link ref="canonical" href="http://aflyingsheep.github.io/page/3/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
-var CONFIG = {
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://aflyingsheep.github.io/img/userhead.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://aflyingsheep.github.io/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
-  assistSearch: undefined,
-  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
-  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
-  postWidget: {"endText":true},
-  nightMode: {"enable":true},
-  back2top: {"enable":true},
-  codeblock: {"style":"carbon","highlight":"light","wordWrap":true},
-  reward: false,
-  fancybox: false,
-  zoomImage: {"gapAside":"20px"},
-  galleryWaterfall: undefined,
-  lazyload: false,
-  pjax: undefined,
-  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
-  shortcuts: undefined,
-  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
-  sourcePath: {"js":"js","css":"css","images":"images"},
-};
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'AFlyingSheep\'s Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-02-10 21:21:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-window.CONFIG = CONFIG;</script><!-- hexo injector head_end start -->
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="AFlyingSheep's Blog" type="application/atom+xml">
-</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tools/"><span class="header-nav-menu-item__icon"><i class="fas fa-book"></i></span><span class="header-nav-menu-item__text">工具</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">AFlyingSheep's Blog</div><div class="header-banner-info__subtitle">Keep coding, keep thinking.</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/03/12/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91-%E4%BF%A1%E4%BB%A4/">论文翻译——基于蜂窝信令数据的智能轨迹推断</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-03-12</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-12</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">24</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">1分</span></span></div></header><div class="post-body"><div class="post-excerpt">原论文：Intelligent Trajectory Inference Through Cellular Signaling Data</div><div class="post-readmore"><a class="post-readmore__link" href="/2022/03/12/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91-%E4%BF%A1%E4%BB%A4/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/02/09/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/">数据预处理与特征工程</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-02-09</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-02-14</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">3.3k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">23分</span></span></div></header><div class="post-body"><div class="post-excerpt">数据预处理与特征工程作为数据挖掘流程中不可或缺的一部分。本文详细介绍了数据处理流程，包括去量纲化、填补缺失值等方法，并用python来具体实现该流程。</div><div class="post-readmore"><a class="post-readmore__link" href="/2022/02/09/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%E4%B8%8E%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/22/c-java/">C#中调用Java的类与方法</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-01-22</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">125</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">1分</span></span></div></header><div class="post-body"><div class="post-excerpt">在本篇文章中，我们使用ikvm工具来实现C#中可以调用Java的类与方法。</div><div class="post-readmore"><a class="post-readmore__link" href="/2022/01/22/c-java/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/21/LIS-and-LCS/">LIS&amp;&amp;LCS以及相互转化问题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-01-21</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">1.7k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">12分</span></span></div></header><div class="post-body"><div class="post-excerpt">在本篇文章中，我们对LCS、LIS问题和两种问题互相转化的条件进行了讨论并列举三道例题。其中，LCS问题使用dp方法求解，LIS问题使用贪心+二分方法求解，时间复杂度达到O(nlogn)。当在特殊情况下，LCS问题也可以转化为LIS问题。</div><div class="post-readmore"><a class="post-readmore__link" href="/2022/01/21/LIS-and-LCS/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/20/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9dp/">状态压缩dp</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-02-09</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">499</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">4分</span></span></div></header><div class="post-body"><div class="post-excerpt">状态压缩dp是采用二进制来枚举状态进而运用动态规划求阶的方法</div><div class="post-readmore"><a class="post-readmore__link" href="/2022/01/20/%E7%8A%B6%E6%80%81%E5%8E%8B%E7%BC%A9dp/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/20/Java/">Java中算法所用语法总结</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-03-26</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">2.3k</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">19分</span></span></div></header><div class="post-body"><div class="post-excerpt">本篇文章主要讲述了Java在刷算法题时的应用总结，包括输入输出、字符串、容器等等。对于以上的每个方面，都有详细介绍以便在需要时查阅。</div><div class="post-readmore"><a class="post-readmore__link" href="/2022/01/20/Java/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/01/18/MarkDown/">MarkDown语法</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-01-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-01-21</span></span><span class="post-meta-item post-meta-item--wordcount"><span class="post-meta-item__icon"><i class="far fa-file-word"></i></span><span class="post-meta-item__info">字数统计</span><span class="post-meta-item__value">235</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">阅读时长</span><span class="post-meta-item__value">1分</span></span></div></header><div class="post-body"><div class="post-excerpt">在初学MarkDown时接触到的语法所写。基本包括了MarkDown所有语法，在学习更多后会继续补充。</div><div class="post-readmore"><a class="post-readmore__link" href="/2022/01/18/MarkDown/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/userhead.png" alt="avatar"></div><p class="sidebar-ov-author__text">Johnson Shuangjian</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/AFlyingSheep" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="mailto:Johnsonshuangjian@gmail.com" target="_blank" rel="noopener" data-popover="向我发送邮件" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope-open-text"></i></span></a><a class="sidebar-ov-social-item" href="tencent://message?uin=398287312" target="_blank" rel="noopener" data-popover="向我发送QQ消息" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">10</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021~2022</span><span class="footer__icon"><i class="fab fa-codepen"></i></span><span>Johnson Shuangjian</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v5.4.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.6.2</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/ribbon.js@latest/dist/ribbon.min.js" size="120" alpha="0.6" zIndex="-1"></script><script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js" color="100,100,100" opacity="0.6" count="99" zIndex="-1"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":-5,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="AFlyingSheep's Blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/userhead.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/headback.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">AFlyingSheep's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">AFlyingSheep's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://github.com/AFlyingSheep" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:Johnsonshuangjian@gmail.com" target="_blank" title="Outlook"><i class="fas fa-envelope-open-text"></i></a><a class="social-icon" href="tencent://message?uin=398287312" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/06/07/Review%20notes/CC/" title="计算机组成原理"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机组成原理"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/07/Review%20notes/CC/" title="计算机组成原理">计算机组成原理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-07T13:05:13.000Z" title="发表于 2022-06-07 21:05:13">2022-06-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Courses/">Courses</a></span></div><div class="content"> 概述
+ 计算机系统层次结构
+
+计算机系统硬件组成：运算器、控制器、存储器、输入输出设备
+冯诺依曼计算机设计关键思想：存储程序，并按地址顺序执行
+计算机软件组成：系统软件、应用软件
+计算机语言：自然语言、高级语言、汇编语言、机器语言
+计算机性能指标
+
+基本字长：表示一个操作数或一条指令所用的基本二进制位数
+运算速度：以MIPS和MFLOPS作为计量单位衡量运算速度
+主频：CPU工作主时钟的频率，时钟周期为主频的倒数
+CPI：执行一条指令所用的时钟周期数
+
+
+
+ 数据的表示和运算
+ 数制与编码
+
+
+进位计数制及其相互转换
+
+
+数值数据的编码与表示
+
+
+真值和机器数
+
+真值：数据的数值通常以正(+)、负(-)号后跟绝对值来表示，称之为“真值”。
+机器数：在计算机中使用的连同数符一起数码化的数值称为机器数。
+
+
+
+BCD码：计算机中采用4位二进制码对每个十进制数位进行编码，一个多位的十进制数被表示为这种编码的数串。
+
+
+校验码：提高计算机的可靠性，采用少量冗余的线路，在原有数据位之外增加校验位，使新得到的由数据位和校验位构成的码字带上某种特性
+
+
+概念：
+
+码字：若干位二进制代码组成的一个字 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/06/02/Review%20notes/data_structure/" title="数据结构与算法"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构与算法"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/02/Review%20notes/data_structure/" title="数据结构与算法">数据结构与算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-02T07:59:58.000Z" title="发表于 2022-06-02 15:59:58">2022-06-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Courses/">Courses</a></span></div><div class="content"> 栈和队列
+
+
+栈的应用
+
+数值转换
+括号匹配的检验
+行编辑程序
+迷宫求解（DFS问题）
+表达式求值
+
+
+
+栈与递归的实现
+
+典型题：汉诺塔问题
+运行被调用函数：(1) 将所有的实在参数、返回地址等信息传递给被调用函数保存；(2)为被调用函数的局部变量分配存储区；(3) 将控制转移到被调函数的入口。
+返回调用函数：(1) 保存被调函数的计算结果；(2) 释放被调函数的数据区；(3) 依照被调函数保存的返回地址将控制转移到调用函数。
+
+
+
+队列的应用
+
+离散事件的模拟
+
+
+
+ 串
+
+堆分配存储表示
+
+
+以一组地址连续的存储单元存放串值字符序列，但存储空间是由程序执行过程中动态分配而得的，存在堆中（由malloc()和free()来管理）。
+
+
+
+存储密度 = 串值所占的存储位/实际分配的存储位（对于链式存储方式）
+
+
+模式匹配算法——KMP算法（时间复杂度O(n+m)O(n+m)O(n+m)）
+
+
+前缀：不包含最后一个字符的所有以第一个字符开头的连续子字符串；
+
+
+后缀：不包含第一个字符的所有以最后一个字符结尾的连续子字符串；
+
+eg. 最大相等前后缀a为0，aa为1,aab为0，aab ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/05/04/algorithm/Joseph_ring/" title="约瑟夫环问题"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="约瑟夫环问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/04/algorithm/Joseph_ring/" title="约瑟夫环问题">约瑟夫环问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-04T02:59:50.000Z" title="发表于 2022-05-04 10:59:50">2022-05-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Algorithm/">Algorithm</a></span></div><div class="content"> Leetcode 1823 找出游戏的获胜者
+ 题目描述
+共有 n 名小伙伴一起做游戏。小伙伴们围成一圈，按 顺时针顺序 从 1 到 n 编号。确切地说，从第 i 名小伙伴顺时针移动一位会到达第 (i+1) 名小伙伴的位置，其中 1 &lt;= i &lt; n ，从第 n 名小伙伴顺时针移动一位会回到第 1 名小伙伴的位置。
+游戏遵循如下规则：
+
+从第 1 名小伙伴所在位置 开始 。
+沿着顺时针方向数 k 名小伙伴，计数时需要 包含 起始时的那位小伙伴。逐个绕圈进行计数，一些小伙伴可能会被数过不止一次。
+你数到的最后一名小伙伴需要离开圈子，并视作输掉游戏。
+如果圈子中仍然有不止一名小伙伴，从刚刚输掉的小伙伴的 顺时针下一位 小伙伴 开始，回到步骤 2 继续执行。
+否则，圈子中最后一名小伙伴赢得游戏。
+
+给你参与游戏的小伙伴总数 n ，和一个整数 k ，返回游戏的获胜者。
+12345678910111213141516//输入：n = 5, k = 2//输出：3/*解释：游戏运行步骤如下：1) 从小伙伴 1 开始。2) 顺时针数 2 名小伙伴，也就是小伙伴 1 和 2 。3) 小伙 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/04/25/reservoir_sampling/" title="蓄水池抽样"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="蓄水池抽样"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/25/reservoir_sampling/" title="蓄水池抽样">蓄水池抽样</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-25T12:33:02.000Z" title="发表于 2022-04-25 20:33:02">2022-04-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Algorithm/">Algorithm</a></span></div><div class="content"> Leetcode 398 随机数索引
+ 题目描述
+给你一个可能含有 重复元素 的整数数组 nums ，请你随机输出给定的目标数字 target 的索引。你可以假设给定的数字一定存在于数组中。
+实现 SolutionSolutionSolution 类：
+
+Solution(int[] nums) 用数组 nums 初始化对象。
+int pick(int target) 从 nums 中选出一个满足 nums[i] == target 的随机索引 i 。如果存在多个有效的索引，则每个索引的返回概率应当相等。
+
+ 示例
+1234567891011//输入[&quot;Solution&quot;, &quot;pick&quot;, &quot;pick&quot;, &quot;pick&quot;][[[1, 2, 3, 3, 3]], [3], [1], [3]]//输出[null, 4, 0, 2]//解释Solution solution = new Solution([1, 2, 3, 3, 3]);solution.pick(3); // 随机返回索引 2, 3 或者 4  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/04/19/Review%20notes/information_safety/" title="信息安全"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="信息安全"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/19/Review%20notes/information_safety/" title="信息安全">信息安全</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-19T14:36:44.000Z" title="发表于 2022-04-19 22:36:44">2022-04-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Courses/">Courses</a></span></div><div class="content"> 密码学基础
+ 密钥基本功能
+
+所有算法的安全性基于密钥的安全性，而不是基于算法细节的安全性，即算法可以公开。
+lock:ek:M→Cunlock:dk:C→Mdk(ek(m))=mlock:\enspace e_k:M\rightarrow C\\unlock:\enspace d_k:C\rightarrow M\\d_k(e_k(m))=mlock:ek​:M→Cunlock:dk​:C→Mdk​(ek​(m))=m
+密码学包括密码编码学和密码分析学。
+密码学的作用：数据加密、身份认证、数据完整性、不可否认性。
+
+ 密码分析简介
+
+密钥通过非密码分析方式的丢失叫泄露。
+密码体制攻击方式：穷举攻击、密码分析。
+Kerckhoff假设：分析一个密码系统是否安全，一般是在假定攻击者所使用的密码系统情况下进行分析。
+除一次一密外，没有绝对安全的加密算法。
+密码分析方法：线性密码分析、差分密码分析。
+计算安全性：
+
+破译该密码的成本超过被加密信息的价值。
+破解该密码的时间超过该信息有用的生命周期。
+
+
+
+ 密码学历史
+
+从原理上可分为：对称（单钥，常规）密码体制、非对称（双钥、公开）密码体 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/04/08/Review%20notes/linear_algebra_2/" title="线性代数(二)"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数(二)"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/08/Review%20notes/linear_algebra_2/" title="线性代数(二)">线性代数(二)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-08T14:28:24.000Z" title="发表于 2022-04-08 22:28:24">2022-04-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Math/">Math</a></span></div><div class="content"> 第五章 线性方程组
+ 线性方程组解的存在性
+ 齐次线性方程组有非零解的充要条件
+
+
+m×nm×nm×n型齐次线性方程组Ax=0Ax=0Ax=0有非零解（只有零解）⇔r(A)&lt;n\Leftrightarrow r(A)&lt;n⇔r(A)&lt;n (r(A)=n)(r(A)=n)(r(A)=n)
+
+
+注：r(A)&lt;nr(A)&lt;nr(A)&lt;n意味着将A化为行阶梯阵时非零行的个数小于n，即对方程Ax=0Ax=0Ax=0化简以后所留下方程的个数小于n。一个方程只能确定一个未知数，这时有自由变化的未知数，所以有非零解。
+
+
+直观描述：由于Ax=0Ax=0Ax=0，所以如果和某个x有关，则使得Ax=0的取指只能是0，如果是别的数则不能都满足=0的条件（前后违背），但是如果和某个x无关，则可以在这个x上随便取值，反正无关，取多少Ax都等于0.
+
+
+
+
+ 非齐次线性方程组解的存在性
+对于非齐次线性方程组，可能有解，也可能无解；有解时可能是唯一解，也可能是无穷多个解。
+
+设Ax=bAx=bAx=b是m×nm×nm×n型非齐次线性方程组，则
+
+Ax=bAx=bAx=b有无穷多解 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/04/05/Review%20notes/linear_algebra_1/" title="线性代数(一)"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数(一)"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/05/Review%20notes/linear_algebra_1/" title="线性代数(一)">线性代数(一)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-05T15:16:20.000Z" title="发表于 2022-04-05 23:16:20">2022-04-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Math/">Math</a></span></div><div class="content"> 第一章 矩阵及其初等变换
+ 矩阵的概念及其运算
+ 矩阵的概念
+
+矩阵A、B的行列数均相同，则称A、B同型。
+A、B同型且对应元素相等，称为A、B相等，记作A=B。
+
+ 特殊的矩阵
+
+对角元都相同的对角阵diag(a,a,…,a)diag(a,a,\dots,a)diag(a,a,…,a)称为数量矩阵。
+
+ 矩阵乘法的性质
+
+矩阵乘法不满足交换律，AB≠BAAB\ne BAAB=BA
+只有当A、B可交换时，(AB)k=AkBk(AB)^k=A^kB^k(AB)k=AkBk
+两个同阶下三角阵的乘积仍为同阶下三角阵；两个同阶对角阵的乘积仍为同阶对角阵，只需将对角元素相乘。
+
+ 矩阵的性质
+
+(AB)T=BTAT(AB)^T=B^TA^T(AB)T=BTAT
+(Ak)T=(AT)k(A^k)^T = (A^T)^k(Ak)T=(AT)k
+对称矩阵的乘积不一定仍是对称阵。
+AAT,ATA,ABT+BATAA^T,A^TA,AB^T+BA^TAAT,ATA,ABT+BAT均为对称阵。（A、B为同阶方阵）
+任意n阶方阵可以表示为一个对称阵和一个反对称阵的和。
+设A、B为n阶对称矩阵，AB=BA⇆ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/03/26/nlp/BiLSTM-CRF/" title="实体抽取——BiLSTM-CRF模型"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="实体抽取——BiLSTM-CRF模型"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/26/nlp/BiLSTM-CRF/" title="实体抽取——BiLSTM-CRF模型">实体抽取——BiLSTM-CRF模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-26T03:53:08.000Z" title="发表于 2022-03-26 11:53:08">2022-03-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/NLP/">NLP</a></span></div><div class="content"> BiLSTM-CRF模型
+在自然语言处理中，很多任务都涉及到序列标注，比如词性标注、分词、命名实体识别等，这些任务都有一个特点是输入序列和标签序列是等长的，因此，常用的解决方法有HMM、MEMM、CRF等，本文将介绍一个2015年提出来的非常经典模型，即BILSTM-CRF模型，该模型现在已经成为命名实体识别、词性标注、分词等任务的主流模型。
+ BiLSTM-CRF模型结构
+
+
+句中转化为字词向量序列，可以事先训练好或者随机初始化。可以使用Model-Base
+经过BiLSTM特征提取，输出是每个单词对应的预测标签
+经过CRF层的约束，输出最优标签。
+
+ Word Embedding
+流程
+
+将一个含有n个词的句子记为：x = (x1, x2, …… , xn)
+利用预训练的embedding矩阵将每个字映射为低维稠密向量。
+
+ BiSTEM提取文本特征
+流程：
+
+将每个句子的Embedding序列作为双向LSTM各个时间步的输入
+将正反输出的隐状态进行拼接，得到完整的隐状态序列。
+
+理解：
+
+为什么NER选择的神经网络从RNN演变为LSTM，再到BiLSTM？
+
+RNN被赋予对于前 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/03/26/Review%20notes/probablity_theory/" title="概率论-先验概率与后验概率等"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论-先验概率与后验概率等"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/26/Review%20notes/probablity_theory/" title="概率论-先验概率与后验概率等">概率论-先验概率与后验概率等</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-26T02:40:08.000Z" title="发表于 2022-03-26 10:40:08">2022-03-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Math/">Math</a></span></div><div class="content"> 概率论的基础知识
+本篇文章，从条件概率开始复习，通过条件概率的可列可加性推出全概率公式与贝叶斯公式，最后得到先验概率与后验概率的概念。
+ 条件概率
+ 定义
+在一个事件已经发生的情况下，另一事件发生的概率。
+P(B∣A)≠P(B)P(B|A)\ne P(B)P(B∣A)=P(B)
+P(B∣A)P(B|A)P(B∣A)叫做A发生的条件下B发生的概率，称为条件概率。
+根据古典概型的概率计算模型，已知A发生的条件下，B发生的概率为：
+P(B∣A)=P(AB)P(A)P(B|A) = \displaystyle\frac{P(AB)}{P(A)}P(B∣A)=P(A)P(AB)​
+
+ 性质
+
+
+非负性
+
+
+规范性
+
+
+可列可加性：
+
+
+设B1,B2,…B1, B2,\dotsB1,B2,…两两不相容，
+
+
+P(⋃i=1∞Bi)∣A)=P[A(⋃i=1∞Bi))]P(A)=P[(⋃i=1∞ABi))]P(A)=∑i=1∞P(ABi)P(A)=∑i=1∞P(ABi)P(A)=∑i=1∞P(Bi∣A)P(\bigcup_{i=1}^{\infty}B_{i})|A) = \frac{P[A(\bi ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/03/16/nlp/BERT/" title="BERT — Learning From Paper"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BERT — Learning From Paper"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/16/nlp/BERT/" title="BERT — Learning From Paper">BERT — Learning From Paper</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-16T14:58:08.000Z" title="发表于 2022-03-16 22:58:08">2022-03-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/NLP/">NLP</a></span></div><div class="content">
+
+
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/userhead.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Johnson Shuangjian</div><div class="author-info__description">小阳的博客，记录学习、娱乐与日常！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/aflyingsheep"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://github.com/AFlyingSheep" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:Johnsonshuangjian@gmail.com" target="_blank" title="Outlook"><i class="fas fa-envelope-open-text"></i></a><a class="social-icon" href="tencent://message?uin=398287312" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/02/10/sor/" title="无题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2023/02/10/sor/" title="无题">无题</a><time datetime="2023-02-10T13:18:45.052Z" title="发表于 2023-02-10 21:18:45">2023-02-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/30/linux/cmake/" title="cmake学习笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cmake学习笔记"/></a><div class="content"><a class="title" href="/2023/01/30/linux/cmake/" title="cmake学习笔记">cmake学习笔记</a><time datetime="2023-01-30T13:27:06.000Z" title="发表于 2023-01-30 21:27:06">2023-01-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/08/cpp/template_and_static/" title="C++：模板类和静态成员变量"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++：模板类和静态成员变量"/></a><div class="content"><a class="title" href="/2023/01/08/cpp/template_and_static/" title="C++：模板类和静态成员变量">C++：模板类和静态成员变量</a><time datetime="2023-01-08T08:57:06.000Z" title="发表于 2023-01-08 16:57:06">2023-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/05/cpp/%E6%9D%82%E7%83%A9/" title="C++杂谈笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++杂谈笔记"/></a><div class="content"><a class="title" href="/2023/01/05/cpp/%E6%9D%82%E7%83%A9/" title="C++杂谈笔记">C++杂谈笔记</a><time datetime="2023-01-05T13:27:06.000Z" title="发表于 2023-01-05 21:27:06">2023-01-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/31/Codelet/" title="Codelet调度模型与Swdarts"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Codelet调度模型与Swdarts"/></a><div class="content"><a class="title" href="/2022/12/31/Codelet/" title="Codelet调度模型与Swdarts">Codelet调度模型与Swdarts</a><time datetime="2022-12-31T10:27:06.000Z" title="发表于 2022-12-31 18:27:06">2022-12-31</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/AI/"><span class="card-category-list-name">AI</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Algorithm/"><span class="card-category-list-name">Algorithm</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C++</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CS/"><span class="card-category-list-name">CS</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Courses/"><span class="card-category-list-name">Courses</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HPC/"><span class="card-category-list-name">HPC</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Math/"><span class="card-category-list-name">Math</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/NLP/"><span class="card-category-list-name">NLP</span><span class="card-category-list-count">4</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/AI/" style="font-size: 1.17em; color: #999c9f">AI</a> <a href="/tags/Algorithm/" style="font-size: 1.43em; color: #99a6b9">Algorithm</a> <a href="/tags/C/" style="font-size: 1.23em; color: #999ea6">C++</a> <a href="/tags/C-C/" style="font-size: 1.17em; color: #999c9f">C/C++</a> <a href="/tags/CS/" style="font-size: 1.17em; color: #999c9f">CS</a> <a href="/tags/Courses/" style="font-size: 1.5em; color: #99a9bf">Courses</a> <a href="/tags/HPC/" style="font-size: 1.37em; color: #99a4b2">HPC</a> <a href="/tags/Java/" style="font-size: 1.17em; color: #999c9f">Java</a> <a href="/tags/Math/" style="font-size: 1.23em; color: #999ea6">Math</a> <a href="/tags/NLP/" style="font-size: 1.1em; color: #999">NLP</a> <a href="/tags/Paper-Reading/" style="font-size: 1.3em; color: #99a1ac">Paper Reading</a> <a href="/tags/Tools/" style="font-size: 1.17em; color: #999c9f">Tools</a> <a href="/tags/Translate/" style="font-size: 1.1em; color: #999">Translate</a> <a href="/tags/linux/" style="font-size: 1.1em; color: #999">linux</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">40</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-01-09T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">110.4k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-02-10T13:21:30.156Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Johnson Shuangjian</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    window.typed = new Typed("#subtitle", {
+      strings: ["Keep coding, keep thinking!"],
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = 'Keep coding, keep thinking!'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":-5,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
