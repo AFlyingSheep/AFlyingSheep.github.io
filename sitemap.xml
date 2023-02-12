@@ -453,6 +453,20 @@
   </url>
   
   <url>
+    <loc>http://aflyingsheep.github.io/tags/Courses/</loc>
+    <lastmod>2023-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://aflyingsheep.github.io/tags/Math/</loc>
+    <lastmod>2023-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://aflyingsheep.github.io/tags/CS/</loc>
     <lastmod>2023-02-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -482,20 +496,6 @@
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/linux/</loc>
-    <lastmod>2023-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aflyingsheep.github.io/tags/Courses/</loc>
-    <lastmod>2023-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aflyingsheep.github.io/tags/Math/</loc>
     <lastmod>2023-02-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -546,6 +546,20 @@
   </url>
   
   <url>
+    <loc>http://aflyingsheep.github.io/categories/Courses/</loc>
+    <lastmod>2023-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://aflyingsheep.github.io/categories/Math/</loc>
+    <lastmod>2023-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://aflyingsheep.github.io/categories/CS/</loc>
     <lastmod>2023-02-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -568,20 +582,6 @@
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/linux/</loc>
-    <lastmod>2023-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aflyingsheep.github.io/categories/Courses/</loc>
-    <lastmod>2023-02-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aflyingsheep.github.io/categories/Math/</loc>
     <lastmod>2023-02-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
