@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>C++11：智能指针 | AFlyingSheep's Blog</title><meta name="keywords" content="CS,C/C++,C++11"><meta name="author" content="Johnson Shuangjian"><meta name="copyright" content="Johnson Shuangjian"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="C++11智能指针，包括shared_ptr, weak_ptr, unique_ptr。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++11：智能指针">
+<meta property="og:url" content="http://aflyingsheep.github.io/2023/02/28/cpp/ptr/index.html">
+<meta property="og:site_name" content="AFlyingSheep&#39;s Blog">
+<meta property="og:description" content="C++11智能指针，包括shared_ptr, weak_ptr, unique_ptr。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://aflyingsheep.github.io/image/shared_ptr/1.png">
+<meta property="article:published_time" content="2023-02-28T04:13:06.000Z">
+<meta property="article:modified_time" content="2023-02-28T04:14:13.288Z">
+<meta property="article:author" content="Johnson Shuangjian">
+<meta property="article:tag" content="CS">
+<meta property="article:tag" content="C&#x2F;C++">
+<meta property="article:tag" content="C++11">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://aflyingsheep.github.io/image/shared_ptr/1.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://aflyingsheep.github.io/2023/02/28/cpp/ptr/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://unpkg.com/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://unpkg.com/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C++11：智能指针',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-28 12:14:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="AFlyingSheep's Blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/userhead.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/shared_ptr/1.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">AFlyingSheep's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C++11：智能指针</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-28T04:13:06.000Z" title="发表于 2023-02-28 12:13:06">2023-02-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-28T04:14:13.288Z" title="更新于 2023-02-28 12:14:13">2023-02-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CS/">CS</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C-11/">C++11</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++11：智能指针"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="shared_ptr有代码存疑"><a class="markdownIt-Anchor" href="#shared_ptr有代码存疑"></a> shared_ptr(有代码存疑)</h2>
+<p>shared_ptr使用了引用计数，每一个shared_ptr的拷贝都指向相同的内存，每次拷贝都会触发引用计数+1，每次生命周期结束析构的时候引用计数-1，在最后一个shared_ptr析构的时候，内存才会释放。</p>
+<p>使用方法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ClassWrapper</span> &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">ClassWrapper</span>() &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;construct&quot;</span> &lt;&lt; endl;</span><br><span class="line">        data = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ~<span class="built_in">ClassWrapper</span>() &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;deconstruct&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">if</span> (data != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">delete</span>[] data;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;print&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>* data;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Func</span><span class="params">(std::shared_ptr&lt;ClassWrapper&gt; ptr)</span> </span>&#123;</span><br><span class="line">    ptr-&gt;<span class="built_in">Print</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> smart_ptr = std::make_shared&lt;ClassWrapper&gt;();</span><br><span class="line">    <span class="keyword">auto</span> ptr2 = smart_ptr; <span class="comment">// 引用计数+1</span></span><br><span class="line">    ptr2-&gt;<span class="built_in">Print</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 函数体内部引用计数+1，执行后-1，如果函数定义为引用传参则引用计数不变</span></span><br><span class="line">    <span class="built_in">Func</span>(smart_ptr); </span><br><span class="line">    smart_ptr-&gt;<span class="built_in">Print</span>();</span><br><span class="line">    ClassWrapper *p = smart_ptr.<span class="built_in">get</span>(); <span class="comment">// 可以通过get获取裸指针</span></span><br><span class="line">    p-&gt;<span class="built_in">Print</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>智能指针还可以自定义删除器，在引用计数为0的时候自动调用删除器来释放对象的内存，代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这块有点没看懂...</span></span><br><span class="line"><span class="function">std::shared_ptr&lt;<span class="keyword">int</span>&gt; <span class="title">ptr</span><span class="params">(<span class="keyword">new</span> <span class="keyword">int</span>, [](<span class="keyword">int</span> *p)&#123; <span class="keyword">delete</span> p; &#125;)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>通过shared_from_this()返回this指针，不要把this指针作为shared_ptr返回出来，因为this指针本质就是裸指针，通过this返回可能 会导致重复析构，不能把this指针交给智能指针管理。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span></span><br><span class="line">      <span class="function">shared_ptr&lt;A&gt; <span class="title">GetSelf</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">shared_from_this</span>();</span><br><span class="line">        <span class="comment">// return shared_ptr&lt;A&gt;(this); 错误，会导致double free</span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>注意避免循环引用，可能导致内存永远不会释放，造成内存泄漏：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">B</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span> &#123;</span></span><br><span class="line">    std::shared_ptr&lt;B&gt; bptr;</span><br><span class="line">    ~<span class="built_in">A</span>() &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;A delete&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">B</span> &#123;</span></span><br><span class="line">    std::shared_ptr&lt;A&gt; aptr;</span><br><span class="line">    ~<span class="built_in">B</span>() &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;B delete&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> aaptr = std::make_shared&lt;A&gt;();	<span class="comment">// aaptr: 1</span></span><br><span class="line">    <span class="keyword">auto</span> bbptr = std::make_shared&lt;B&gt;();	<span class="comment">// bbptr: 1</span></span><br><span class="line">    aaptr-&gt;bptr = bbptr;	<span class="comment">// bbptr: 2</span></span><br><span class="line">    bbptr-&gt;aptr = aaptr;	<span class="comment">// aaptr: 2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>aptr和bptr的引用计数为2，离开作用域后aptr和bptr的引用计数-1，但是永远不会为0，导致指针永远不会析构，产生了内存泄漏，如何解决这种问题呢，答案是使用<strong>weak_ptr</strong>。</p>
+<h2 id="weak_ptr"><a class="markdownIt-Anchor" href="#weak_ptr"></a> weak_ptr</h2>
+<p><code>weak_ptr</code>本身也是一个模板类，但是不能直接用它来定义一个智能指针的对象，只能配合<code>shared_ptr</code>来使用，可以将<code>shared_ptr</code>的对象赋值给<code>weak_ptr</code>，并且这样并不会改变引用计数的值。查看<code>weak_ptr</code>的代码时发现，它主要有<code>lock</code>、<code>swap</code>、<code>reset</code>、<code>expired</code>、<code>operator=</code>、<code>use_count</code>几个函数，与<code>shared_ptr</code>相比多了<code>lock</code>、<code>expired</code>函数，但是却少了<code>get</code>函数，甚至连<code>operator* </code>和 <code>operator-&gt;</code>都没有，可用的函数数量少的可怜，下面通过一些例子来了解一下<code>weak_ptr</code>的具体用法。</p>
+<ol>
+<li>
+<p><code>weak_ptr</code>解决<code>shared_ptr</code>循环引用的问题<br />
+定义两个类，每个类中又包含一个指向对方类型的智能指针作为成员变量，然后创建对象，设置完成后查看引用计数后退出，看一下测试结果：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CB</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CA</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">CA</span>() &#123; cout &lt;&lt; <span class="string">&quot;CA() called! &quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    ~<span class="built_in">CA</span>() &#123; cout &lt;&lt; <span class="string">&quot;~CA() called! &quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">set_ptr</span><span class="params">(shared_ptr&lt;CB&gt;&amp; ptr)</span> </span>&#123; m_ptr_b = ptr; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">b_use_count</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;b use count : &quot;</span> &lt;&lt; m_ptr_b.<span class="built_in">use_count</span>() &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;this is class CA!&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    shared_ptr&lt;CB&gt; m_ptr_b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CB</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">CB</span>() &#123; cout &lt;&lt; <span class="string">&quot;CB() called! &quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    ~<span class="built_in">CB</span>() &#123; cout &lt;&lt; <span class="string">&quot;~CB() called! &quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">set_ptr</span><span class="params">(shared_ptr&lt;CA&gt;&amp; ptr)</span> </span>&#123; m_ptr_a = ptr; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">a_use_count</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;a use count : &quot;</span> &lt;&lt; m_ptr_a.<span class="built_in">use_count</span>() &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;this is class CB!&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    shared_ptr&lt;CA&gt; m_ptr_a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test_refer_to_each_other</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">shared_ptr&lt;CA&gt; <span class="title">ptr_a</span><span class="params">(<span class="keyword">new</span> CA())</span></span>;</span><br><span class="line">    <span class="function">shared_ptr&lt;CB&gt; <span class="title">ptr_b</span><span class="params">(<span class="keyword">new</span> CB())</span></span>;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;a use count : &quot;</span> &lt;&lt; ptr_a.<span class="built_in">use_count</span>() &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;b use count : &quot;</span> &lt;&lt; ptr_b.<span class="built_in">use_count</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    ptr_a-&gt;<span class="built_in">set_ptr</span>(ptr_b);</span><br><span class="line">    ptr_b-&gt;<span class="built_in">set_ptr</span>(ptr_a);</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;a use count : &quot;</span> &lt;&lt; ptr_a.<span class="built_in">use_count</span>() &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;b use count : &quot;</span> &lt;&lt; ptr_b.<span class="built_in">use_count</span>() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	测试结果：</span></span><br><span class="line"><span class="comment">	CA() called!</span></span><br><span class="line"><span class="comment">    CB() called!</span></span><br><span class="line"><span class="comment">    a use count : 1</span></span><br><span class="line"><span class="comment">    b use count : 1</span></span><br><span class="line"><span class="comment">    a use count : 2</span></span><br><span class="line"><span class="comment">    b use count : 2</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>通过结果可以看到，最后CA和CB的对象并没有被析构，其中的引用效果如下图所示，起初定义完ptr_a和ptr_b时，只有①③两条引用，然后调用函数set_ptr后又增加了②④两条引用，当test_refer_to_each_other这个函数返回时，对象ptr_a和ptr_b被销毁，也就是①③两条引用会被断开，但是②④两条引用依然存在，每一个的引用计数都不为0，结果就导致其指向的内部对象无法析构，造成内存泄漏。</p>
+<p><img src="/image/ptr/1.png" alt="1" /></p>
+<p>解决这种状况的办法就是将两个类中的一个成员变量改为<code>weak_ptr</code>对象，因为<code>weak_ptr</code>不会增加引用计数，使得引用形不成环，最后就可以正常的释放内部的对象，不会造成内存泄漏，比如将<code>CB</code>中的成员变量改为<code>weak_ptr</code>对象，代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CB</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">CB</span>() &#123; cout &lt;&lt; <span class="string">&quot;CB() called! &quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    ~<span class="built_in">CB</span>() &#123; cout &lt;&lt; <span class="string">&quot;~CB() called! &quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">set_ptr</span><span class="params">(shared_ptr&lt;CA&gt;&amp; ptr)</span> </span>&#123; m_ptr_a = ptr; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">a_use_count</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;a use count : &quot;</span> &lt;&lt; m_ptr_a.<span class="built_in">use_count</span>() &lt;&lt; endl; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;this is class CB!&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    weak_ptr&lt;CA&gt; m_ptr_a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	测试结果：</span></span><br><span class="line"><span class="comment">	CA() called!</span></span><br><span class="line"><span class="comment">    CB() called!</span></span><br><span class="line"><span class="comment">    a use count : 1</span></span><br><span class="line"><span class="comment">    b use count : 1</span></span><br><span class="line"><span class="comment">    a use count : 1</span></span><br><span class="line"><span class="comment">    b use count : 2</span></span><br><span class="line"><span class="comment">    ~CA() called!</span></span><br><span class="line"><span class="comment">    ~CB() called!</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><img src="/image/ptr/2.png" alt="2" /></p>
+</li>
+<li>
+<p>weak_ptr常用函数</p>
+<p><code>weak_ptr</code>中只有函数<code>lock</code>和<code>expired</code>两个函数比较重要，因为它本身不会增加引用计数，所以它指向的对象可能在它用的时候已经被释放了，所以在用之前需要使用<code>expired</code>函数来检测是否过期，然后使用<code>lock</code>函数来获取其对应的<code>shared_ptr</code>对象，然后进行后续操作：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">shared_ptr&lt;CA&gt; <span class="title">ptr_a</span><span class="params">(<span class="keyword">new</span> CA())</span></span>;     <span class="comment">// 输出：CA() called!</span></span><br><span class="line">    <span class="function">shared_ptr&lt;CB&gt; <span class="title">ptr_b</span><span class="params">(<span class="keyword">new</span> CB())</span></span>;     <span class="comment">// 输出：CB() called!</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;ptr_a use count : &quot;</span> &lt;&lt; ptr_a.<span class="built_in">use_count</span>() &lt;&lt; endl; <span class="comment">// 输出：ptr_a use count : 1</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;ptr_b use count : &quot;</span> &lt;&lt; ptr_b.<span class="built_in">use_count</span>() &lt;&lt; endl; <span class="comment">// 输出：ptr_b use count : 1</span></span><br><span class="line">    </span><br><span class="line">    weak_ptr&lt;CA&gt; wk_ptr_a = ptr_a;</span><br><span class="line">    weak_ptr&lt;CB&gt; wk_ptr_b = ptr_b;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!wk_ptr_a.<span class="built_in">expired</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        wk_ptr_a.<span class="built_in">lock</span>()-&gt;<span class="built_in">show</span>();        <span class="comment">// 输出：this is class CA!</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!wk_ptr_b.<span class="built_in">expired</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        wk_ptr_b.<span class="built_in">lock</span>()-&gt;<span class="built_in">show</span>();        <span class="comment">// 输出：this is class CB!</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 编译错误</span></span><br><span class="line">    <span class="comment">// 编译必须作用于相同的指针类型之间</span></span><br><span class="line">    <span class="comment">// wk_ptr_a.swap(wk_ptr_b);         // 调用交换函数</span></span><br><span class="line"></span><br><span class="line">    wk_ptr_b.<span class="built_in">reset</span>();                   <span class="comment">// 将wk_ptr_b的指向清空</span></span><br><span class="line">    <span class="keyword">if</span> (wk_ptr_b.<span class="built_in">expired</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;wk_ptr_b is invalid&quot;</span> &lt;&lt; endl;  <span class="comment">// 输出：wk_ptr_b is invalid 说明改指针已经无效</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    wk_ptr_b = ptr_b;</span><br><span class="line">    <span class="keyword">if</span> (!wk_ptr_b.<span class="built_in">expired</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        wk_ptr_b.<span class="built_in">lock</span>()-&gt;<span class="built_in">show</span>();        <span class="comment">// 输出：this is class CB! 调用赋值操作后，wk_ptr_b恢复有效</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 编译错误</span></span><br><span class="line">    <span class="comment">// 编译必须作用于相同的指针类型之间</span></span><br><span class="line">    <span class="comment">// wk_ptr_b = wk_ptr_a;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 最后输出的引用计数还是1，说明之前使用weak_ptr类型赋值，不会影响引用计数</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;ptr_a use count : &quot;</span> &lt;&lt; ptr_a.<span class="built_in">use_count</span>() &lt;&lt; endl; <span class="comment">// 输出：ptr_a use count : 1</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;ptr_b use count : &quot;</span> &lt;&lt; ptr_b.<span class="built_in">use_count</span>() &lt;&lt; endl; <span class="comment">// 输出：ptr_b use count : 1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>总结</p>
+<ul>
+<li>weak_ptr虽然是一个模板类，但是不能用来直接定义指向原始指针的对象。</li>
+<li>weak_ptr接受shared_ptr类型的变量赋值，但是反过来是行不通的，需要使用lock函数。</li>
+<li>weak_ptr设计之初就是为了服务于shared_ptr的，所以不增加引用计数就是它的核心功能。</li>
+<li>由于不知道什么之后weak_ptr所指向的对象就会被析构掉，所以使用之前请先使用expired函数检测一下</li>
+</ul>
+</li>
+</ol>
+<h2 id="unique_ptr"><a class="markdownIt-Anchor" href="#unique_ptr"></a> unique_ptr</h2>
+<p><code>auto_ptr</code>本身是一个模板类，那么一般情况下直接用它来定义一个智能指针的对象。不过在当前不建议使用。</p>
+<p>operator=也就是赋值运算符，是智能指针auto_ptr最具争议的一个方法，或者说一种特性，它的种种限制完全来自于这个赋值操作，作为面向的对象中的一部分，如果把一个对象赋值给另一个对象，那么两个对象就是完全一样的，但是这一点却在auto_ptr上打破了，智能指针auto_ptr的赋值，只是移交了所有权，将内部对象的控制所有权从等号的右侧转移到左侧，等号右侧的智能指针丧失对原有内部对象的控制，如果右侧的对象不检测内部对象的有效性，就会造成程序崩溃，测试如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test5</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> <span class="function">auto_ptr&lt;Example&gt; <span class="title">ptr5</span><span class="params">(<span class="keyword">new</span> Example(<span class="number">5</span>))</span></span>;     <span class="comment">// Example: 5(输出内容)</span></span><br><span class="line"> auto_ptr&lt;Example&gt; ptr6 = ptr5;              <span class="comment">// 没有输出</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">if</span> (ptr5.<span class="built_in">get</span>())</span><br><span class="line">     cout &lt;&lt; <span class="string">&quot;ptr5 is valid&quot;</span> &lt;&lt; endl;        <span class="comment">// 没有输出，说明ptr5已经无效，如果再调用就会崩溃</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">if</span> (ptr6.<span class="built_in">get</span>())</span><br><span class="line">     cout &lt;&lt; <span class="string">&quot;ptr6 is valid&quot;</span> &lt;&lt; endl;        <span class="comment">// ptr6 is valid(输出内容)</span></span><br><span class="line"></span><br><span class="line"> ptr6-&gt;<span class="built_in">test_print</span>();                         <span class="comment">// in test print: number = 5(输出内容)</span></span><br><span class="line"> <span class="comment">//ptr5-&gt;test_print();                       // 直接崩溃 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试auto_ptr作为参数，这是常常容易出错的情况，原因还是<code>operator=</code>的操作引起的，因为<code>auto_ptr</code>的赋值会转移控制权，所以你把<code>auto_ptr</code>的对象作为参数传递给一个函数的时候，后面再使用这个对象就会直接崩溃。</p>
+<p>unique_ptr与auto_ptr是最像的，他设计之初就是为了替代auto_ptr，其实两者基本上没有区别，如果把auto_ptr限制一下，使其不能通过拷贝构造和赋值获得所有权，但是可以通过std::move()函数获得所有权，那基本上就变成了unique_pr，这一点通过下面的函数分析也可以看出，两者的函数基本一致。</p>
+<p><code>unique_ptr</code>作为一个模板类，可以直接用它来定义一个智能指针的对象，例如<code>std::unique_pr&lt;Test&gt; pa(new Test);</code>，查看<code>unique_ptr</code>的代码时发现，它主要有get、release、reset、operator*、operator-&gt;、operator=、swap、operator bool、get_deleter几个函数，相比于auto_ptr常用函数来说，只多了swap、operator bool、get_deleter这三个函数，基本上没什么变化。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<ol>
+<li>对比auto_ptr和unique_ptr后发现，unique_ptr几乎只是将auto_ptr的operator=改为std::move()函数。</li>
+<li>现在标准库中只剩下了shared_ptr、weak_ptr和unique_ptr三个智能指针，weak_ptr是为了解决shared_ptr的循环引用问题而存在的，有其特定的使用情况，所以只剩下了shared_ptr和unique_ptr的选择，选择的标准就是看是否需要对原对象共享所有权，如果需要使用shared_ptr，如果不需要是独占所有权的使用unique_ptr。</li>
+<li>unique_ptr并没有从根本上消除可能错误，仅仅是提高了犯错的成本，并且给出移动所有权的提示，但是在容器vector元素赋值时依然很隐晦，可能造成auto_ptr相同的错误。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://aflyingsheep.github.io">Johnson Shuangjian</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://aflyingsheep.github.io/2023/02/28/cpp/ptr/">http://aflyingsheep.github.io/2023/02/28/cpp/ptr/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://aflyingsheep.github.io" target="_blank">AFlyingSheep's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CS/">CS</a><a class="post-meta__tags" href="/tags/C-C/">C/C++</a><a class="post-meta__tags" href="/tags/C-11/">C++11</a></div><div class="post_share"><div class="social-share" data-image="/image/shared_ptr/1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://unpkg.com/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://unpkg.com/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/02/27/cpp/forward/"><img class="next-cover" src="/image/shared_ptr/1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++11：引用折叠和完美转发(巨NB)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/02/27/cpp/forward/" title="C++11：引用折叠和完美转发(巨NB)"><img class="cover" src="/image/shared_ptr/1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-27</div><div class="title">C++11：引用折叠和完美转发(巨NB)</div></div></a></div><div><a href="/2023/02/27/cpp/cpp11/" title="C++11：新特性"><img class="cover" src="/image/shared_ptr/1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-27</div><div class="title">C++11：新特性</div></div></a></div><div><a href="/2023/02/27/cpp/function_pointer/" title="C++函数指针"><img class="cover" src="/image/covers/funcp.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-27</div><div class="title">C++函数指针</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/userhead.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Johnson Shuangjian</div><div class="author-info__description">小阳的博客，记录学习、娱乐与日常！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/aflyingsheep"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://github.com/AFlyingSheep" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:Johnsonshuangjian@gmail.com" target="_blank" title="Outlook"><i class="fas fa-envelope-open-text"></i></a><a class="social-icon" href="tencent://message?uin=398287312" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！文章记录了学习、生活过程中所遇到的知识、思考与乐趣，如果有不对的地方欢迎评论交流！祝生活愉快:-)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#shared_ptr%E6%9C%89%E4%BB%A3%E7%A0%81%E5%AD%98%E7%96%91"><span class="toc-number">1.</span> <span class="toc-text"> shared_ptr(有代码存疑)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#weak_ptr"><span class="toc-number">2.</span> <span class="toc-text"> weak_ptr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unique_ptr"><span class="toc-number">3.</span> <span class="toc-text"> unique_ptr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text"> 总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/02/28/cpp/ptr/" title="C++11：智能指针"><img src="/image/shared_ptr/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++11：智能指针"/></a><div class="content"><a class="title" href="/2023/02/28/cpp/ptr/" title="C++11：智能指针">C++11：智能指针</a><time datetime="2023-02-28T04:13:06.000Z" title="发表于 2023-02-28 12:13:06">2023-02-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/27/cpp/forward/" title="C++11：引用折叠和完美转发(巨NB)"><img src="/image/shared_ptr/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++11：引用折叠和完美转发(巨NB)"/></a><div class="content"><a class="title" href="/2023/02/27/cpp/forward/" title="C++11：引用折叠和完美转发(巨NB)">C++11：引用折叠和完美转发(巨NB)</a><time datetime="2023-02-27T14:55:06.000Z" title="发表于 2023-02-27 22:55:06">2023-02-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/27/cpp/cpp11/" title="C++11：新特性"><img src="/image/shared_ptr/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++11：新特性"/></a><div class="content"><a class="title" href="/2023/02/27/cpp/cpp11/" title="C++11：新特性">C++11：新特性</a><time datetime="2023-02-27T07:55:06.000Z" title="发表于 2023-02-27 15:55:06">2023-02-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/27/cpp/function_pointer/" title="C++函数指针"><img src="/image/covers/funcp.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++函数指针"/></a><div class="content"><a class="title" href="/2023/02/27/cpp/function_pointer/" title="C++函数指针">C++函数指针</a><time datetime="2023-02-27T05:46:08.000Z" title="发表于 2023-02-27 13:46:08">2023-02-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/24/cpp/cpp_primer/" title="C++ Primer"><img src="/image/covers/cpp_primer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ Primer"/></a><div class="content"><a class="title" href="/2023/02/24/cpp/cpp_primer/" title="C++ Primer">C++ Primer</a><time datetime="2023-02-24T13:22:06.000Z" title="发表于 2023-02-24 21:22:06">2023-02-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Johnson Shuangjian</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://unpkg.com/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://unpkg.com/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://unpkg.com/mathjax/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '45rLw57nAW4RPBI6unvz50nc-gzGzoHsz',
+      appKey: 'PvsOoxvyj5yqCSzBb7lnWBD8',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://unpkg.com/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://unpkg.com/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://unpkg.com/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"left","hOffset":-5,"vOffset":-5},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body></html>
