@@ -4,13 +4,25 @@
   
     
     <entry>
-      <title></title>
+      <title>Respeaker 4-mic录制与播放</title>
       <link href="/2023/03/01/alsa/"/>
       <url>/2023/03/01/alsa/</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="调节音量"><a class="markdownIt-Anchor" href="#调节音量"></a> 调节音量</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> alsamixer</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用F6选中声卡(JieLi BR17)并点回车,使用方向键↑↓调节声音大小，按ESC退出</span></span><br></pre></td></tr></table></figure><h1 id="录制"><a class="markdownIt-Anchor" href="#录制"></a> 录制</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看设备</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> arecord -l</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 找到BR17，查看它是哪个card。card会对应好几个device(但是BR17只有一个device)，记住所需要的device</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 录制</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> arecord --device=plughw:1,0 -f s32_LE -r 16000 -c 8 filename.wav</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 其中，--device=plughw代表使用插入的设备，后面对应的1,0代表card == 1, device == 0，所以需要根据上面的情况进行更改</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -f代表保存的参数，使用s32_LE</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -r代表频率，-c代表通道数</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> filename可以改为你所需要的文件名</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 点击回车开始录制，点击ctrl+c暂停录制</span></span><br></pre></td></tr></table></figure><h1 id="播放"><a class="markdownIt-Anchor" href="#播放"></a> 播放</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看设备</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> aplay -l</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 找到BR17，查看它是哪个card。card会对应好几个device(但是BR17只有一个device)，记住所需要的device</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 播放</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> aplay --device=plughw:1,0 -f s32_LE filename.wav</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 其中，--device=plughw代表使用插入的设备，后面对应的1,0代表card == 1, device == 0，所以需要根据上面的情况进行更改</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -f代表播放的参数，使用s32_LE（s32_LE是一种封装，调用这个格式会自动帮你更改参数，比如波特率、大端小端等）</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> filename是录制的文件名</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 点击回车开始播放，点击ctrl+c暂停播放</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
+      <categories>
+          
+          <category> Raspberry Pi </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Raspberry Pi </tag>
+            
+        </tags>
       
     </entry>
     
