@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>喜大普奔！</title>
+      <link href="/2023/07/21/xdpb/"/>
+      <url>/2023/07/21/xdpb/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本次数据丢失给我带来的教训：网站源程序要传到github分支中，重要数据要备份0.0</p><p>可惜有些学习版软件无法直接拷贝过来，还是需要重新弄一个:-(</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>多路归并</title>
       <link href="/2023/05/29/algorithm/multiway-merging/"/>
       <url>/2023/05/29/algorithm/multiway-merging/</url>
@@ -40,9 +53,9 @@
           
           <category> CS </category>
           
-          <category> C/C++ </category>
-          
           <category> CUDA </category>
+          
+          <category> C/C++ </category>
           
       </categories>
       
@@ -73,9 +86,9 @@
           
           <category> CS </category>
           
-          <category> C/C++ </category>
-          
           <category> CUDA </category>
+          
+          <category> C/C++ </category>
           
       </categories>
       
@@ -999,6 +1012,31 @@
         <tags>
             
             <tag> Courses </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二分查找，非常重要！</title>
+      <link href="/2022/06/01/algorithm/binary_search/"/>
+      <url>/2022/06/01/algorithm/binary_search/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="二分查找基本理论"><a class="markdownIt-Anchor" href="#二分查找基本理论"></a> 二分查找基本理论</h1><p>待补充。</p><h1 id="二分查找典型例题"><a class="markdownIt-Anchor" href="#二分查找典型例题"></a> 二分查找典型例题</h1><h2 id="leetcode-2517"><a class="markdownIt-Anchor" href="#leetcode-2517"></a> Leetcode. 2517</h2><p>待补充。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Algorithm </tag>
             
         </tags>
       

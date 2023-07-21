@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://aflyingsheep.github.io/2023/07/21/xdpb/</loc>
+    
+    <lastmod>2023-07-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://aflyingsheep.github.io/2022/06/01/algorithm/binary_search/</loc>
+    
+    <lastmod>2023-06-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://aflyingsheep.github.io/2023/05/29/algorithm/multiway-merging/</loc>
     
     <lastmod>2023-05-29</lastmod>
@@ -553,7 +571,7 @@
 
   <url>
     <loc>http://aflyingsheep.github.io/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -561,119 +579,119 @@
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/Java/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/Algorithm/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/Tools/</loc>
-    <lastmod>2023-05-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aflyingsheep.github.io/tags/Translate/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/Raspberry-Pi/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://aflyingsheep.github.io/tags/Courses/</loc>
-    <lastmod>2023-05-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aflyingsheep.github.io/tags/Math/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <loc>http://aflyingsheep.github.io/tags/Translate/</loc>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/CS/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/C-C/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/CUDA/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/C/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/C-11/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://aflyingsheep.github.io/tags/Courses/</loc>
+    <lastmod>2023-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://aflyingsheep.github.io/tags/Math/</loc>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/HPC/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/linux/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/Paper-Reading/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/NLP/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/tags/AI/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -682,105 +700,105 @@
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/Algorithm/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/Other-tools/</loc>
-    <lastmod>2023-05-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aflyingsheep.github.io/categories/Translate/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/Raspberry-Pi/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://aflyingsheep.github.io/categories/Courses/</loc>
-    <lastmod>2023-05-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aflyingsheep.github.io/categories/Math/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <loc>http://aflyingsheep.github.io/categories/Translate/</loc>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/CS/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/C/</loc>
-    <lastmod>2023-05-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aflyingsheep.github.io/categories/C-11/</loc>
-    <lastmod>2023-05-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://aflyingsheep.github.io/categories/C-C/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/CUDA/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://aflyingsheep.github.io/categories/C-C/</loc>
+    <lastmod>2023-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://aflyingsheep.github.io/categories/C-11/</loc>
+    <lastmod>2023-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://aflyingsheep.github.io/categories/Courses/</loc>
+    <lastmod>2023-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://aflyingsheep.github.io/categories/Math/</loc>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/HPC/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/linux/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/NLP/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://aflyingsheep.github.io/categories/AI/</loc>
-    <lastmod>2023-05-29</lastmod>
+    <lastmod>2023-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
