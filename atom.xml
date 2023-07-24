@@ -6,7 +6,7 @@
   <link href="http://aflyingsheep.github.io/atom.xml" rel="self"/>
   
   <link href="http://aflyingsheep.github.io/"/>
-  <updated>2023-07-21T16:27:40.455Z</updated>
+  <updated>2023-07-24T17:08:15.311Z</updated>
   <id>http://aflyingsheep.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CUDA Stream, CUDA Graph</title>
+    <link href="http://aflyingsheep.github.io/2023/07/24/cudaGraph/"/>
+    <id>http://aflyingsheep.github.io/2023/07/24/cudaGraph/</id>
+    <published>2023-07-24T15:56:06.000Z</published>
+    <updated>2023-07-24T17:08:15.311Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="cuda-stream"><a class="markdownIt-Anchor" href="#cuda-stream"></a> CUDA Stream</h1><p>CUDA Stream表示一个GPU操作队列，该队列中的操作将以添加到流中的先后顺序而依次执行。可以将一个流看做是GPU上的一个任务，不同任务可以并行执行。使用CUDA流，首先要选择一个<strong>支持设备重叠（Device Overlap）功能</strong>的设备，支持设备重叠功能的GPU能够在执行一个CUDA核函数的同时，还能在主机和设备之间执行复制数据操作。</p><h2 id="cuda-实现重叠数据传输原理"><a class="markdownIt-Anchor" href="#cuda-实现重叠数据传输原理"></a> CUDA 实现重叠数据传输原理</h2><h3 id="默认流"><a class="markdownIt-Anchor" href="#默认流"></a> 默认流</h3><p>CUDA 中的所有设备操作（内核和数据传输）都在一个流中运行。如果没有指定流，则使用默认流（也称为“空流”）。默认流与其他流不同，因为它是关于设备上操作的同步流：在所有先前发出的操作 <em>在设备上的任何流中</em> 完成之前，默认流中的任何操作都不会开始，并且默认流中的操作必须在任何其他操作（在设备上的任何流中）之前完成就要开始了。</p><p>关于内核从主机的角度启动的异步行为使得重叠设备和主机的计算如下所示：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cudaMemcpy</span>(d_a, a, numBytes, cudaMemcpyHostToDevice);</span><br><span class="line">increment&lt;&lt;&lt;<span class="number">1</span>,N&gt;&gt;&gt;(d_a)</span><br><span class="line"><span class="built_in">myCpuFunction</span>(b)<span class="comment">// CPU在启动kernel后直接运行此函数，设备不知道该函数的存在；如果没有这个函数主机可能开始等待kernel执行完毕以执行memcpy。</span></span><br><span class="line"><span class="built_in">cudaMemcpy</span>(a, d_a, numBytes, cudaMemcpyDeviceToHost);</span><br></pre></td></tr></table></figure><h3 id="非默认流"><a class="markdownIt-Anchor" href="#非默认流"></a> 非默认流</h3><p>CUDA C++中流可以被创建与销毁：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cudaStream_t stream1;</span><br><span class="line">cudaError_t result;</span><br><span class="line">result = <span class="built_in">cudaStreamCreate</span>(&amp;stream1);</span><br><span class="line">result = <span class="built_in">cudaStreamDestroy</span>(stream1);</span><br></pre></td></tr></table></figure><p>为了向非默认流发出数据传输，我们使用了 <code>cudaMemcpyAsync()</code> 函数:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result = <span class="built_in">cudaMemcpyAsync</span>(d_a, a, N, cudaMemcpyHostToDevice, stream1)</span><br></pre></td></tr></table></figure><h3 id="流同步"><a class="markdownIt-Anchor" href="#流同步"></a> 流同步</h3><p>注意：这个函数是非阻塞的！需要与流进行同步！</p><p><code>cudaDeviceSynchronize()</code> ，它会阻止主机代码，直到之前在设备上发出的所有操作都完成为止。性能浪费！</p><p><code>cudaStreamSynchronize(stream)</code> 可用于阻止主机线程，直到指定流中以前发出的所有操作都已完成。</p><p><code>cudaStreamQuery(stream)</code> 测试向指定流发出的所有操作是否已完成，而不阻止主机执行。</p><p><code>cudaEventSynchronize(event)</code> 和 <code>cudaEventQuery(event)</code> 的行为与它们的流对应项相似，只是它们的结果基于是否记录了指定的事件，而不是基于指定的流是否空闲。</p><p><code>cudaStreamWaitEvent(event)</code>在单个流中同步特定事件的操作（即使事件记录在不同的流中，或者记录在不同的设备上）。</p><h3 id="重叠的内核执行和数据传输"><a class="markdownIt-Anchor" href="#重叠的内核执行和数据传输"></a> 重叠的内核执行和数据传输</h3><p>修改前的主机代码如下所示：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cudaMemcpy</span>(d_a, a, numBytes, cudaMemcpyHostToDevice);</span><br><span class="line">increment&lt;&lt;&lt;<span class="number">1</span>,N&gt;&gt;&gt;(d_a)</span><br><span class="line"><span class="built_in">cudaMemcpy</span>(a, d_a, numBytes, cudaMemcpyDeviceToHost);</span><br></pre></td></tr></table></figure><p>准备探寻是否可以实现流同步：</p><p>方法一：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nStreams; ++i) &#123;</span><br><span class="line">  <span class="keyword">int</span> offset = i * streamSize;</span><br><span class="line">  <span class="built_in">cudaMemcpyAsync</span>(&amp;d_a[offset], &amp;a[offset], streamBytes, cudaMemcpyHostToDevice, stream[i]);</span><br><span class="line">  kernel&lt;&lt;&lt;streamSize/blockSize, blockSize, <span class="number">0</span>, stream[i]&gt;&gt;&gt;(d_a, offset);</span><br><span class="line">  <span class="built_in">cudaMemcpyAsync</span>(&amp;a[offset], &amp;d_a[offset], streamBytes, cudaMemcpyDeviceToHost, stream[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>方法二：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nStreams; ++i) &#123;</span><br><span class="line">  <span class="keyword">int</span> offset = i * streamSize;</span><br><span class="line">  <span class="built_in">cudaMemcpyAsync</span>(&amp;d_a[offset], &amp;a[offset],</span><br><span class="line">                  streamBytes, cudaMemcpyHostToDevice, cudaMemcpyHostToDevice, stream[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nStreams; ++i) &#123;</span><br><span class="line">  <span class="keyword">int</span> offset = i * streamSize;</span><br><span class="line">  kernel&lt;&lt;&lt;streamSize/blockSize, blockSize, <span class="number">0</span>, stream[i]&gt;&gt;&gt;(d_a, offset);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nStreams; ++i) &#123;</span><br><span class="line">  <span class="keyword">int</span> offset = i * streamSize;</span><br><span class="line">  <span class="built_in">cudaMemcpyAsync</span>(&amp;a[offset], &amp;d_a[offset],</span><br><span class="line">                  streamBytes, cudaMemcpyDeviceToHost, cudaMemcpyDeviceToHost, stream[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这两种方法在不同设备执行时间是并不同的（甚至存在负优化的情况！）这是因为有的设备(C1060)只有一个拷贝引擎，这使得内存交换与运算可能无法掩盖；有的有两个复制引擎，一个用于主机到设备的传输，另一个用于设备到主机的传输。但在以上两种情况下性能又是不一样。具体见Reference[1]。</p><h1 id="cuda-graph"><a class="markdownIt-Anchor" href="#cuda-graph"></a> CUDA Graph</h1><p>应用程序中可能存在一些小的、执行次数较多的kernel，多次启动、释放资源的开销往往导致程序整体性能较差。CUDA Graphs 将整个计算流程定义为一个图而不是单个操作的列表。 最后通过提供一种由单个 CPU 操作来启动图上的多个 GPU 操作的方式减少kernel提交启动开销，进而解决上述问题。</p><p>简单程序的优化流程（kernel执行时间：2.9μs）：</p><ol><li><p>baseline：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NSTEP 1000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NKERNEL 20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// start CPU wallclock timer</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> istep=<span class="number">0</span>; istep&lt;NSTEP; istep++)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> ikrnl=<span class="number">0</span>; ikrnl&lt;NKERNEL; ikrnl++)&#123;</span><br><span class="line">    shortKernel&lt;&lt;&lt;blocks, threads, <span class="number">0</span>, stream&gt;&gt;&gt;(out_d, in_d);</span><br><span class="line">    <span class="built_in">cudaStreamSynchronize</span>(stream);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//end CPU wallclock time</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Kernel average time: 9.6μs</span></span><br><span class="line"><span class="comment">// 每次执行完都要调用同步，启动、释放开销完全暴露</span></span><br></pre></td></tr></table></figure></li><li><p>Overlapping</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// start wallclock timer</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> istep=<span class="number">0</span>; istep&lt;NSTEP; istep++)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> ikrnl=<span class="number">0</span>; ikrnl&lt;NKERNEL; ikrnl++)&#123;</span><br><span class="line">    shortKernel&lt;&lt;&lt;blocks, threads, <span class="number">0</span>, stream&gt;&gt;&gt;(out_d, in_d);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cudaStreamSynchronize</span>(stream);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//end wallclock timer</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Kernel average time: 3.8μs</span></span><br><span class="line"><span class="comment">// 不需要每次同步，kernel之间调用是异步的，可以掩盖启动时间。但仍然存在与多次启动相关的开销，外层循环的同步时间是一定存在的。</span></span><br></pre></td></tr></table></figure></li><li><p>CUDA Graph</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> graphCreated=<span class="literal">false</span>;</span><br><span class="line">cudaGraph_t graph;</span><br><span class="line">cudaGraphExec_t instance;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> istep=<span class="number">0</span>; istep&lt;NSTEP; istep++)&#123;</span><br><span class="line">  <span class="keyword">if</span>(!graphCreated)&#123;</span><br><span class="line">    <span class="built_in">cudaStreamBeginCapture</span>(stream, cudaStreamCaptureModeGlobal);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> ikrnl=<span class="number">0</span>; ikrnl&lt;NKERNEL; ikrnl++)&#123;</span><br><span class="line">      shortKernel&lt;&lt;&lt;blocks, threads, <span class="number">0</span>, stream&gt;&gt;&gt;(out_d, in_d);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cudaStreamEndCapture</span>(stream, &amp;graph);</span><br><span class="line">    <span class="built_in">cudaGraphInstantiate</span>(&amp;instance, graph, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="number">0</span>);</span><br><span class="line">    graphCreated=<span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cudaGraphLaunch</span>(instance, stream);</span><br><span class="line">  <span class="built_in">cudaStreamSynchronize</span>(stream);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Kernel average time: 3.4μs</span></span><br><span class="line"><span class="comment">// kernel graph只需要捕获和实例化一次，并在所有后续循环中重复使用相同的实例</span></span><br><span class="line"><span class="comment">// 创建实例图时间开销较大，通常为了从cuda graph中受益，需要重复调用相同的cuda graph足够多次。 </span></span><br></pre></td></tr></table></figure></li></ol><h2 id="动态环境中使用-cuda-图"><a class="markdownIt-Anchor" href="#动态环境中使用-cuda-图"></a> 动态环境中使用 CUDA 图</h2><p>在 ToolkitVersion10 中引入 CUDA 图形时，可以对其进行更新，以反映其实例化中的一些细微变化。此后，此类更新操作的覆盖范围和效率显著提高。在这篇文章中，我描述了一些通过使用 CUDA 图来提高实际应用程序性能的场景，其中一些场景包括图更新功能。</p><p>具体见文章：<a href="https://developer.nvidia.com/zh-cn/blog/employing-cuda-graphs-in-a-dynamic-environment/">在动态环境中使用 CUDA 图 - NVIDIA 技术博客</a>，仅仅做初步的阅读，还没有深入思考。</p><h1 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h1><p>[1] <a href="https://developer.nvidia.com/zh-cn/blog/how-overlap-data-transfers-cuda-cc/">如何在 CUDA C/C++ 中实现数据传输的重叠 - NVIDIA 技术博客</a></p><p>[2] <a href="https://developer.nvidia.com/blog/cuda-graphs/">Getting Started with CUDA Graphs | NVIDIA Technical Blog</a></p><p>[3] <a href="https://developer.nvidia.com/zh-cn/blog/employing-cuda-graphs-in-a-dynamic-environment/">在动态环境中使用 CUDA 图 - NVIDIA 技术博客</a></p>]]></content>
+    
+    
+    <summary type="html">关于CUDA Stream、CUDA Graph进行了一些学习调研。</summary>
+    
+    
+    
+    <category term="C++" scheme="http://aflyingsheep.github.io/categories/C/"/>
+    
+    <category term="CUDA" scheme="http://aflyingsheep.github.io/categories/CUDA/"/>
+    
+    
+    <category term="C++" scheme="http://aflyingsheep.github.io/tags/C/"/>
+    
+    <category term="CUDA" scheme="http://aflyingsheep.github.io/tags/CUDA/"/>
+    
+  </entry>
   
   <entry>
     <title>神威混合编译</title>
@@ -93,18 +118,18 @@
     
     
     
+    <category term="CUDA" scheme="http://aflyingsheep.github.io/categories/CUDA/"/>
+    
     <category term="CS" scheme="http://aflyingsheep.github.io/categories/CS/"/>
     
     <category term="C/C++" scheme="http://aflyingsheep.github.io/categories/C-C/"/>
     
-    <category term="CUDA" scheme="http://aflyingsheep.github.io/categories/CUDA/"/>
     
+    <category term="CUDA" scheme="http://aflyingsheep.github.io/tags/CUDA/"/>
     
     <category term="CS" scheme="http://aflyingsheep.github.io/tags/CS/"/>
     
     <category term="C/C++" scheme="http://aflyingsheep.github.io/tags/C-C/"/>
-    
-    <category term="CUDA" scheme="http://aflyingsheep.github.io/tags/CUDA/"/>
     
   </entry>
   
@@ -122,18 +147,18 @@
     
     
     
+    <category term="CUDA" scheme="http://aflyingsheep.github.io/categories/CUDA/"/>
+    
     <category term="CS" scheme="http://aflyingsheep.github.io/categories/CS/"/>
     
     <category term="C/C++" scheme="http://aflyingsheep.github.io/categories/C-C/"/>
     
-    <category term="CUDA" scheme="http://aflyingsheep.github.io/categories/CUDA/"/>
     
+    <category term="CUDA" scheme="http://aflyingsheep.github.io/tags/CUDA/"/>
     
     <category term="CS" scheme="http://aflyingsheep.github.io/tags/CS/"/>
     
     <category term="C/C++" scheme="http://aflyingsheep.github.io/tags/C-C/"/>
-    
-    <category term="CUDA" scheme="http://aflyingsheep.github.io/tags/CUDA/"/>
     
   </entry>
   
@@ -472,27 +497,6 @@
     <category term="C++" scheme="http://aflyingsheep.github.io/tags/C/"/>
     
     <category term="linux" scheme="http://aflyingsheep.github.io/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++：模板类和静态成员变量</title>
-    <link href="http://aflyingsheep.github.io/2023/01/08/cpp/template_and_static/"/>
-    <id>http://aflyingsheep.github.io/2023/01/08/cpp/template_and_static/</id>
-    <published>2023-01-08T08:57:06.000Z</published>
-    <updated>2023-02-11T13:10:34.737Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="c-模板类和静态成员变量"><a class="markdownIt-Anchor" href="#c-模板类和静态成员变量"></a> C++ 模板类和静态成员变量</h1><p>当一个模板类产生不同的类时，<strong>每个类产生的对象共享static变量</strong>，静态成员变量作用于类层面。即类间不共享，类内共享。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> size_type&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hello</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> s_a;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">s_a++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 模板类中静态变量的定义</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">size_type</span>&gt;</span> <span class="keyword">int</span> hello&lt;size_type&gt;::s_a = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">hello&lt;<span class="keyword">int</span>&gt; h3;</span><br><span class="line">hello&lt;<span class="keyword">char</span>&gt; h4; </span><br><span class="line"></span><br><span class="line">h3.<span class="built_in">add</span>();</span><br><span class="line">h4.<span class="built_in">add</span>();</span><br><span class="line">h4.<span class="built_in">add</span>();</span><br><span class="line"></span><br><span class="line">std::cout &lt;&lt; hello&lt;<span class="keyword">int</span>&gt;::s_a &lt;&lt; std::endl;</span><br><span class="line">std::cout &lt;&lt; hello&lt;<span class="keyword">char</span>&gt;::s_a &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    out:</span></span><br><span class="line"><span class="comment">    1</span></span><br><span class="line"><span class="comment">    2</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">当一个模板类产生不同的类时，每个类产生的对象共享static变量，静态成员变量作用于类层面</summary>
-    
-    
-    
-    <category term="C++" scheme="http://aflyingsheep.github.io/categories/C/"/>
-    
-    
-    <category term="C++" scheme="http://aflyingsheep.github.io/tags/C/"/>
     
   </entry>
   
